@@ -18,7 +18,8 @@
     "@stellar/freighter-api": "^2.0.0",
     "react-hot-toast": "^2.4.1",
     "posthog-js": "^1.144.2",
-    "@sentry/react": "^8.9.2"
+    "@sentry/react": "^8.9.2",
+    "lucide-react": "^0.400.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
