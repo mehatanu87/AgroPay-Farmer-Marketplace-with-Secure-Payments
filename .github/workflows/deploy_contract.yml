@@ -127,7 +127,7 @@ jobs:
 
       - name: Install system dependencies
         if: steps.cache_stellar.outputs.cache-hit != 'true'
-        run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
+        run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config libudev-dev
 
       - name: Install Stellar CLI
         if: steps.cache_stellar.outputs.cache-hit != 'true'
@@ -227,7 +227,7 @@ jobs:
 
       - name: Install system dependencies
         if: steps.cache_stellar.outputs.cache-hit != 'true'
-        run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config
+        run: sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config libudev-dev
 
       - name: Install Stellar CLI
         if: steps.cache_stellar.outputs.cache-hit != 'true'
