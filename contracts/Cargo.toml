@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = [
+    "agropay_escrow",
+]
+
+[workspace.package]
+edition = "2021"

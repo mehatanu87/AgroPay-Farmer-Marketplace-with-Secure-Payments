@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.log
+
+# Rust / Soroban
+target/
+Cargo.lock
+
+# OS
+.DS_Store
+Thumbs.db
