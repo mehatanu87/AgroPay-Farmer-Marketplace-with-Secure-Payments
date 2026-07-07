@@ -82,7 +82,13 @@ export async function callContract(method, args, sourcePublicKey) {
   }
 
   const hash = sendResult.hash;
-  const finalStatus = await pollTransaction(hash);
+  
+  let finalStatus;
+  try {
+    finalStatus = await pollTransaction(hash);
+  } catch (e) {
+    throw new Error(`Polling Error: ${e.message}`);
+  }
 
   let returnValue = null;
   if (finalStatus.status === "SUCCESS" && finalStatus.returnValue) {
@@ -94,7 +100,14 @@ export async function callContract(method, args, sourcePublicKey) {
 
 async function pollTransaction(hash, attempts = 15, delayMs = 2000) {
   for (let i = 0; i < attempts; i++) {
-    const result = await server.getTransaction(hash);
+    let result;
+    try {
+      result = await server.getTransaction(hash);
+    } catch (e) {
+      // Just log it or throw with prefix
+      throw new Error(`getTransaction crashed: ${e.message}`);
+    }
+    
     if (result.status !== "NOT_FOUND") {
       return result;
     }

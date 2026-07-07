@@ -9,4 +9,7 @@ export default defineConfig({
   build: {
     minify: false,
   },
+  optimizeDeps: {
+    exclude: ["@stellar/stellar-sdk", "@stellar/js-xdr", "@stellar/freighter-api"],
+  },
 });
