@@ -49,69 +49,32 @@ jobs:
         uses: actions/cache@v4
         with:
           path: contracts/target/wasm32-unknown-unknown/release/*.wasm
-          key: wasm-v3-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
+          key: wasm-v4-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
 
       - name: Skip build notice
         if: steps.cache_wasm.outputs.cache-hit == 'true' || inputs.skip_build == 'true'
         run: echo "✅ WASM already cached — skipping."
 
-      - name: Install Rust + WASM target
+      # Pin to Rust 1.81.0 — last version BEFORE reference-types was default
+      - name: Install Rust 1.81.0 + WASM target
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@1.81.0
         with:
           targets: wasm32-unknown-unknown
 
-      # Download pre-built stellar-cli (30 seconds vs 10 minutes!)
-      - name: Install Stellar CLI (pre-built binary)
+      - name: Verify Rust version
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
         run: |
-          echo "Downloading stellar-cli v${{ env.STELLAR_CLI_VERSION }} pre-built binary..."
-          curl -fsSL "https://github.com/stellar/stellar-cli/releases/download/v${{ env.STELLAR_CLI_VERSION }}/stellar-cli-installer-v${{ env.STELLAR_CLI_VERSION }}-x86_64-unknown-linux-gnu.tar.gz" -o stellar-cli.tar.gz \
-            || curl -fsSL "https://github.com/stellar/stellar-cli/releases/download/v${{ env.STELLAR_CLI_VERSION }}/stellar-cli-${{ env.STELLAR_CLI_VERSION }}-x86_64-unknown-linux-gnu.tar.gz" -o stellar-cli.tar.gz
-          
-          # Try to extract and install
-          mkdir -p stellar-extract
-          tar xzf stellar-cli.tar.gz -C stellar-extract
-          
-          # Find the binary wherever it was extracted
-          STELLAR_BIN=$(find stellar-extract -name 'stellar' -type f | head -1)
-          if [ -z "$STELLAR_BIN" ]; then
-            echo "Pre-built binary not found, falling back to cargo-binstall..."
-            curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-            cargo binstall stellar-cli@${{ env.STELLAR_CLI_VERSION }} --no-confirm --no-symlinks 2>/dev/null \
-              || cargo binstall stellar-cli --no-confirm --no-symlinks 2>/dev/null \
-              || { echo "binstall failed too, using cargo install..."; sudo apt-get update && sudo apt-get install -y libdbus-1-dev pkg-config libudev-dev && cargo install --locked stellar-cli; }
-          else
-            chmod +x "$STELLAR_BIN"
-            sudo cp "$STELLAR_BIN" /usr/local/bin/stellar
-          fi
-          
-          stellar --version
+          rustc --version
+          echo "✅ Using Rust 1.81.0 (no reference-types in WASM)"
 
-      # Use 'stellar contract build' — it sets correct WASM flags automatically
-      - name: Build contract with stellar-cli
+      - name: Build contract WASM
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
         working-directory: contracts/agropay_escrow
         run: |
-          echo "Building with stellar contract build (handles WASM flags automatically)..."
-          stellar contract build 2>/dev/null \
-            || {
-              echo "stellar contract build not available, using cargo with manual flags..."
-              RUSTFLAGS="-C target-feature=-reference-types -C target-cpu=mvp" \
-              cargo build --target wasm32-unknown-unknown --release
-            }
-          
+          cargo build --target wasm32-unknown-unknown --release
           echo "✅ Build complete"
-          ls -lah ../target/wasm32-unknown-unknown/release/*.wasm 2>/dev/null || true
-
-      - name: Optimize WASM (strip unnecessary sections)
-        if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
-        run: |
-          WASM=$(find contracts/target/wasm32-unknown-unknown/release -name '*.wasm' | head -1)
-          if [ -n "$WASM" ]; then
-            echo "Optimizing $WASM..."
-            stellar contract optimize --wasm "$WASM" 2>/dev/null && echo "✅ Optimized" || echo "⚠️ Optimize skipped (non-critical)"
-          fi
+          ls -lah ../target/wasm32-unknown-unknown/release/*.wasm
 
       - name: Upload WASM artifact
         uses: actions/upload-artifact@v4
