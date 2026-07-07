@@ -29,7 +29,7 @@ AgroPay is a decentralized, transparent, and low-cost agricultural marketplace a
 
 To simulate early-stage startup growth, we actively collected feedback from **40+ testnet users** via a structured [Google Form](https://docs.google.com/forms/d/e/1FAIpQLScNUg6BWsAyUEKK6dCSfjhb8AerpAd4XY2JuTwfv22h9hYW9Q/viewform?usp=dialog). 
 
-🔗 **[View Exported Google Form Responses (Google Sheets)](https://docs.google.com/spreadsheets/d/127govSRHIpxs1TrBRCHsxoonug5rvQahFVrRNoyDwtU/edit?usp=sharing)**
+🔗 **[View Exported Google Form Responses (Google Sheets Link)](https://docs.google.com/spreadsheets/d/127govSRHIpxs1TrBRCHsxoonug5rvQahFVrRNoyDwtU/edit?usp=sharing)**
 
 ### Users Onboarded
 | User ID | Name | Email | Wallet Address | Feedback Summary |
