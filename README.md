@@ -164,6 +164,21 @@ agropay/
 
 ---
 
+## Product UI & Screenshots
+
+Below are screenshots demonstrating the AgroPay user interface, mobile responsive design, and analytics tracking:
+
+### Product UI
+![Product UI](./images/product_UI.png)
+
+### Mobile Responsive Design
+![Mobile Responsive](./images/mobile_responsive.png)
+
+### Analytics & Monitoring
+![Analytics](./images/analytics.png)
+
+---
+
 ## Setup & Running Locally
 
 ### Prerequisites
