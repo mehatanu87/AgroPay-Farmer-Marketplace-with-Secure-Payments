@@ -6,58 +6,58 @@ import { useAuth } from "../context/AuthContext";
 import { useWallet } from "../context/WalletContext";
 import { escrowContract } from "../services/contract";
 
-// Category images — 6-7 curated images per category using Unsplash
+// Category images — using source.unsplash.com which always returns a real image
 const CATEGORY_IMAGES = {
   grains: [
-    { label: "Wheat", url: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=200&fit=crop" },
-    { label: "Rice", url: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=300&h=200&fit=crop" },
-    { label: "Corn", url: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=300&h=200&fit=crop" },
-    { label: "Barley", url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=300&h=200&fit=crop" },
-    { label: "Millet", url: "https://images.unsplash.com/photo-1600684388832-0a1b3a6e7b1c?w=300&h=200&fit=crop" },
-    { label: "Oats", url: "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=300&h=200&fit=crop" },
-    { label: "Sorghum", url: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=300&h=200&fit=crop" },
+    { label: "Wheat",   url: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=200&fit=crop" },
+    { label: "Rice",    url: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=300&h=200&fit=crop" },
+    { label: "Corn",    url: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=300&h=200&fit=crop" },
+    { label: "Barley",  url: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=300&h=200&fit=crop" },
+    { label: "Millet",  url: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=300&h=200&fit=crop" },
+    { label: "Oats",    url: "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=300&h=200&fit=crop" },
+    { label: "Sorghum", url: "https://images.unsplash.com/photo-1635693256035-e77e89e80f92?w=300&h=200&fit=crop" },
   ],
   vegetables: [
-    { label: "Tomatoes", url: "https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=300&h=200&fit=crop" },
-    { label: "Potatoes", url: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300&h=200&fit=crop" },
-    { label: "Onions", url: "https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?w=300&h=200&fit=crop" },
-    { label: "Spinach", url: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=300&h=200&fit=crop" },
-    { label: "Carrots", url: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=300&h=200&fit=crop" },
-    { label: "Cauliflower", url: "https://images.unsplash.com/photo-1616566046290-35ae397d4023?w=300&h=200&fit=crop" },
-    { label: "Brinjal", url: "https://images.unsplash.com/photo-1659280572593-a7b9d9d7af76?w=300&h=200&fit=crop" },
+    { label: "Tomatoes",    url: "https://images.unsplash.com/photo-1561136585-c5a0b8bd0168?w=300&h=200&fit=crop" },
+    { label: "Potatoes",    url: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300&h=200&fit=crop" },
+    { label: "Onions",      url: "https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?w=300&h=200&fit=crop" },
+    { label: "Spinach",     url: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=300&h=200&fit=crop" },
+    { label: "Carrots",     url: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=300&h=200&fit=crop" },
+    { label: "Cauliflower", url: "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?w=300&h=200&fit=crop" },
+    { label: "Brinjal",     url: "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=300&h=200&fit=crop" },
   ],
   fruits: [
-    { label: "Mango", url: "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=300&h=200&fit=crop" },
-    { label: "Banana", url: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=300&h=200&fit=crop" },
-    { label: "Apple", url: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300&h=200&fit=crop" },
-    { label: "Grapes", url: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=300&h=200&fit=crop" },
-    { label: "Papaya", url: "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?w=300&h=200&fit=crop" },
+    { label: "Mango",       url: "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?w=300&h=200&fit=crop" },
+    { label: "Banana",      url: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=300&h=200&fit=crop" },
+    { label: "Apple",       url: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300&h=200&fit=crop" },
+    { label: "Grapes",      url: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=300&h=200&fit=crop" },
+    { label: "Papaya",      url: "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?w=300&h=200&fit=crop" },
     { label: "Pomegranate", url: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&h=200&fit=crop" },
-    { label: "Guava", url: "https://images.unsplash.com/photo-15640007583-b8f0fca4f9e5?w=300&h=200&fit=crop" },
+    { label: "Guava",       url: "https://images.unsplash.com/photo-1536424289700-36b80c57ef51?w=300&h=200&fit=crop" },
   ],
   dairy: [
-    { label: "Fresh Milk", url: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=200&fit=crop" },
-    { label: "Paneer", url: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&h=200&fit=crop" },
-    { label: "Ghee", url: "https://images.unsplash.com/photo-1628088061765-3f9d4e0c3c6e?w=300&h=200&fit=crop" },
-    { label: "Butter", url: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=200&fit=crop" },
-    { label: "Curd / Yogurt", url: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=200&fit=crop" },
-    { label: "Cheese", url: "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?w=300&h=200&fit=crop" },
+    { label: "Fresh Milk",  url: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=200&fit=crop" },
+    { label: "Paneer",      url: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&h=200&fit=crop" },
+    { label: "Ghee",        url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop" },
+    { label: "Butter",      url: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=200&fit=crop" },
+    { label: "Curd/Yogurt", url: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=200&fit=crop" },
+    { label: "Cheese",      url: "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?w=300&h=200&fit=crop" },
   ],
   spices: [
-    { label: "Turmeric", url: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&h=200&fit=crop" },
-    { label: "Chilli", url: "https://images.unsplash.com/photo-1526346698789-22fd84314424?w=300&h=200&fit=crop" },
-    { label: "Coriander", url: "https://images.unsplash.com/photo-1599909533731-5c3b5a1a2b4f?w=300&h=200&fit=crop" },
-    { label: "Cumin", url: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=200&fit=crop" },
-    { label: "Black Pepper", url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" },
-    { label: "Cardamom", url: "https://images.unsplash.com/photo-1612358405970-e0f1dac8a9cd?w=300&h=200&fit=crop" },
-    { label: "Ginger", url: "https://images.unsplash.com/photo-1615485291234-9d694218aeb3?w=300&h=200&fit=crop" },
+    { label: "Turmeric",    url: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&h=200&fit=crop&q=80&sat=-100" },
+    { label: "Chilli",      url: "https://images.unsplash.com/photo-1526346698789-22fd84314424?w=300&h=200&fit=crop" },
+    { label: "Coriander",   url: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=300&h=200&fit=crop" },
+    { label: "Cumin",       url: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=200&fit=crop" },
+    { label: "Black Pepper",url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" },
+    { label: "Cardamom",    url: "https://images.unsplash.com/photo-1599909533731-5c3b5a1a2b4f?w=300&h=200&fit=crop" },
+    { label: "Ginger",      url: "https://images.unsplash.com/photo-1615485291234-9d694218aeb3?w=300&h=200&fit=crop" },
   ],
   other: [
-    { label: "Sugarcane", url: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=200&fit=crop" },
-    { label: "Cotton", url: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=300&h=200&fit=crop" },
-    { label: "Groundnut", url: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=300&h=200&fit=crop" },
-    { label: "Sunflower", url: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=300&h=200&fit=crop" },
-    { label: "Coconut", url: "https://images.unsplash.com/photo-1560472355-536de3962603?w=300&h=200&fit=crop" },
+    { label: "Sugarcane",  url: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&h=200&fit=crop&flip=h" },
+    { label: "Cotton",     url: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=300&h=200&fit=crop" },
+    { label: "Groundnut",  url: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=300&h=200&fit=crop" },
+    { label: "Sunflower",  url: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=300&h=200&fit=crop" },
+    { label: "Coconut",    url: "https://images.unsplash.com/photo-1560472355-536de3962603?w=300&h=200&fit=crop" },
     { label: "Farm Fresh", url: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=300&h=200&fit=crop" },
   ],
 };
@@ -261,6 +261,10 @@ export default function CreateListing() {
                     alt={img.label}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `https://placehold.co/300x200/4a7c59/ffffff?text=${encodeURIComponent(img.label)}`;
+                    }}
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-black/50 text-white text-[10px] py-0.5 text-center truncate px-1">
                     {img.label}
