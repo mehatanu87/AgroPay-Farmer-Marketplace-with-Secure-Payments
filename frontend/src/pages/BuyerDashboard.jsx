@@ -46,7 +46,20 @@ export default function BuyerDashboard() {
       try {
         const { hash } = await escrowContract.confirmDelivery(wallet, { orderId: order.contractOrderId });
         await orderApi.confirm(order._id, hash);
-        toast.success("Delivery confirmed — funds released to farmer");
+        toast.success(
+          <span>
+            Delivery confirmed!{" "}
+            <a
+              href={`https://stellar.expert/explorer/testnet/tx/${hash}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-semibold"
+            >
+              View on Explorer
+            </a>
+          </span>,
+          { duration: 6000 }
+        );
         loadOrders();
       } catch (err) {
         toast.error(err.message || err.response?.data?.message || "Failed to confirm");
@@ -61,9 +74,22 @@ export default function BuyerDashboard() {
       if (!reason) return;
       setActingId(order._id);
       try {
-        await escrowContract.raiseDispute(wallet, { orderId: order.contractOrderId });
+        const { hash } = await escrowContract.raiseDispute(wallet, { orderId: order.contractOrderId });
         await orderApi.dispute(order._id, reason);
-        toast.success("Dispute raised — an admin will review it");
+        toast.success(
+          <span>
+            Dispute raised!{" "}
+            <a
+              href={`https://stellar.expert/explorer/testnet/tx/${hash}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-semibold"
+            >
+              View on Explorer
+            </a>
+          </span>,
+          { duration: 6000 }
+        );
         loadOrders();
       } catch (err) {
         toast.error(err.message || err.response?.data?.message || "Failed to raise dispute");

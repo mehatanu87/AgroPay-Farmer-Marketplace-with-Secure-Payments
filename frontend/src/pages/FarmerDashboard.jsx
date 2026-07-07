@@ -57,7 +57,20 @@ export default function FarmerDashboard() {
       if (proofFile) fd.append("proof", proofFile);
 
       await orderApi.markDelivered(order._id, fd);
-      toast.success("Marked as delivered");
+      toast.success(
+        <span>
+          Marked as delivered!{" "}
+          <a
+            href={`https://stellar.expert/explorer/testnet/tx/${hash}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold"
+          >
+            View on Explorer
+          </a>
+        </span>,
+        { duration: 6000 }
+      );
       loadData();
     } catch (err) {
       toast.error(err.message || err.response?.data?.message || "Failed to mark delivered");

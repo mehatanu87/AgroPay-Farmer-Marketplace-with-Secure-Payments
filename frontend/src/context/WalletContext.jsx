@@ -12,7 +12,7 @@ const server = new Horizon.Server(HORIZON_URL);
 
 export function WalletProvider({ children }) {
   const { user, updateUser } = useAuth();
-  const [publicKey, setPublicKey] = useState(user?.walletAddress || null);
+  const [publicKey, setPublicKey] = useState(null);
   const [connecting, setConnecting] = useState(false);
   const [balance, setBalance] = useState(null); // XLM balance
   const [balanceLoading, setBalanceLoading] = useState(false);

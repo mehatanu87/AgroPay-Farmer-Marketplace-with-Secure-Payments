@@ -65,7 +65,20 @@ export default function ListingDetail() {
         fundTxHash: hash,
       });
 
-      toast.success("Order placed and funds locked in escrow!");
+      toast.success(
+        <span>
+          Order placed and funds locked!{" "}
+          <a
+            href={`https://stellar.expert/explorer/testnet/tx/${hash}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold"
+          >
+            View on Explorer
+          </a>
+        </span>,
+        { duration: 6000 }
+      );
       navigate(`/buyer-dashboard`, { state: { newOrderId: data.order._id } });
     } catch (err) {
       toast.error(err.message || err.response?.data?.message || "Failed to place order");

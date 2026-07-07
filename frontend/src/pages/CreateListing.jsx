@@ -125,7 +125,20 @@ export default function CreateListing() {
 
       await listingApi.create(fd);
       refreshBalance(); // update XLM balance after on-chain tx
-      toast.success("Listing created and live on-chain!");
+      toast.success(
+        <span>
+          Listing created and live on-chain!{" "}
+          <a
+            href={`https://stellar.expert/explorer/testnet/tx/${txHash}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold"
+          >
+            View on Explorer
+          </a>
+        </span>,
+        { duration: 6000 }
+      );
       navigate("/farmer-dashboard");
     } catch (err) {
       toast.error(err.response?.data?.message || err.message || "Failed to create listing");
