@@ -42,14 +42,11 @@ export async function callContract(method, args, sourcePublicKey) {
     .setTimeout(60)
     .build();
 
-  // Simulate first to get required auth + resource footprint.
-  const simulated = await server.simulateTransaction(tx);
-  if (rpc.Api.isSimulationError(simulated)) {
-    throw new Error(`Simulation failed: ${simulated.error}`);
-  }
-
-  const prepared = rpc.assembleTransaction(tx, simulated).build();
-  const signedXdr = await signXdr(prepared.toXDR(), sourcePublicKey);
+  // In some versions of Freighter, passing a fully assembled Protocol 22 transaction
+  // causes a "Bad union switch: 4" error due to SDK version mismatches.
+  // Instead, we skip `assembleTransaction` and send the raw transaction to Freighter.
+  // Freighter v2 will automatically simulate and attach the footprint for us!
+  const signedXdr = await signXdr(tx.toXDR(), sourcePublicKey);
 
   const signedTx = TransactionBuilder.fromXDR(signedXdr, NETWORK_PASSPHRASE);
   const sendResult = await server.sendTransaction(signedTx);
