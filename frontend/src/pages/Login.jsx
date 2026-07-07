@@ -65,6 +65,15 @@ export default function Login() {
             Sign up
           </Link>
         </p>
+
+        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-center">
+          <p className="text-sm text-blue-800 dark:text-blue-300">
+            New to Web3? 
+            <a href="https://www.youtube.com/watch?v=tutorial" target="_blank" rel="noreferrer" className="ml-1 font-semibold underline">
+              Watch our Wallet Setup Tutorial
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
