@@ -149,16 +149,30 @@ export default function ListingDetail() {
             <span className="text-sm font-bold">{total} XLM</span>
           </div>
 
-          <button
-            onClick={handleBuy}
-            disabled={placing || listing.quantityAvailable === 0}
-            className="w-full py-3 rounded-lg bg-agro-600 hover:bg-agro-700 disabled:opacity-60 text-white font-medium text-sm"
+          <div className="flex gap-3">
+            <button
+              onClick={handleBuy}
+              disabled={placing || listing.quantityAvailable === 0}
+              className="w-full py-3 rounded-lg bg-agro-600 hover:bg-agro-700 disabled:opacity-60 text-white font-medium text-sm"
+            >
+              {placing
+                ? "Confirm in wallet..."
+                : listing.quantityAvailable === 0
+                ? "Out of stock"
+                : "Buy — Pay into Escrow (V9)"}
+            </button>
+            <button
+              onClick={() => toast.success("Negotiation feature coming soon!")}
+              className="w-full py-3 rounded-lg border border-agro-600 text-agro-600 hover:bg-agro-50 font-medium text-sm"
+            >
+              Make an Offer
+            </button>
+          </div>
+          <button 
+            onClick={() => toast.success("Chat feature coming soon!")}
+            className="w-full py-2 rounded-lg text-sm text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            {placing
-              ? "Confirm in wallet..."
-              : listing.quantityAvailable === 0
-              ? "Out of stock"
-              : "Buy — Pay into Escrow (V9)"}
+            Message Farmer
           </button>
           <p className="text-xs text-gray-400 text-center">
             Funds are locked in the AgroPay escrow contract and only released to the farmer once you confirm delivery.
