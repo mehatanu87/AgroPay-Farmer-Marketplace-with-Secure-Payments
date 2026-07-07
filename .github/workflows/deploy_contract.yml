@@ -51,7 +51,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: contracts/target/wasm32-unknown-unknown/release/agropay_escrow.wasm
-          key: wasm-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
+          key: wasm-v2-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
 
       - name: Skip build notice
         if: steps.cache_wasm.outputs.cache-hit == 'true' || inputs.skip_build == 'true'
@@ -70,14 +70,18 @@ jobs:
           path: |
             ~/.cargo/registry
             ~/.cargo/git
-            contracts/target
-          key: cargo-${{ hashFiles('contracts/**/Cargo.toml') }}
-          restore-keys: cargo-
+          key: cargo-v2-${{ hashFiles('contracts/**/Cargo.toml') }}
+          restore-keys: cargo-v2-
 
       - name: Build contract WASM
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
         working-directory: contracts/agropay_escrow
-        run: cargo build --target wasm32-unknown-unknown --release
+        env:
+          RUSTFLAGS: "-C target-feature=-reference-types"
+        run: |
+          echo "RUSTFLAGS=$RUSTFLAGS"
+          cargo clean --target wasm32-unknown-unknown 2>/dev/null || true
+          cargo build --target wasm32-unknown-unknown --release
 
       - name: Upload WASM artifact
         uses: actions/upload-artifact@v4
