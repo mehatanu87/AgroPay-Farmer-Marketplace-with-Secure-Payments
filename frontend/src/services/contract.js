@@ -11,7 +11,7 @@ import {
 import { signXdr } from "./wallet";
 
 const RPC_URL = import.meta.env.VITE_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org";
-const CONTRACT_ID = import.meta.env.VITE_ESCROW_CONTRACT_ID;
+const CONTRACT_ID = "CDLMALEHLMMQRYDDS6T32SR7HCV6DGEU3NNO34TYUIXNHHSCGRFKGRGF"; // Overriding Vercel env var temporarily
 const NETWORK_PASSPHRASE = Networks.TESTNET;
 
 const server = new rpc.Server(RPC_URL, { allowHttp: false });
