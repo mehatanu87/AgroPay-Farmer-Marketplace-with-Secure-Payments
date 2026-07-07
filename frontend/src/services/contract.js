@@ -83,37 +83,10 @@ export async function callContract(method, args, sourcePublicKey) {
 
   const hash = sendResult.hash;
   
-  let finalStatus;
-  try {
-    finalStatus = await pollTransaction(hash);
-  } catch (e) {
-    throw new Error(`Polling Error: ${e.message}`);
-  }
-
-  let returnValue = null;
-  if (finalStatus.status === "SUCCESS" && finalStatus.returnValue) {
-    returnValue = scValToNative(finalStatus.returnValue);
-  }
-
-  return { hash, returnValue };
-}
-
-async function pollTransaction(hash, attempts = 15, delayMs = 2000) {
-  for (let i = 0; i < attempts; i++) {
-    let result;
-    try {
-      result = await server.getTransaction(hash);
-    } catch (e) {
-      // Just log it or throw with prefix
-      throw new Error(`getTransaction crashed: ${e.message}`);
-    }
-    
-    if (result.status !== "NOT_FOUND") {
-      return result;
-    }
-    await new Promise((r) => setTimeout(r, delayMs));
-  }
-  throw new Error("Timed out waiting for transaction confirmation.");
+  // We bypass pollTransaction on the frontend due to js-xdr duplicate bundle 
+  // bug in Vite. We return the hash to the backend, which will poll and 
+  // parse the transaction on the Node.js side.
+  return { hash };
 }
 
 // --- Convenience wrappers for each contract method ---

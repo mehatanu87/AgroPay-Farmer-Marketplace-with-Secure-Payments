@@ -48,7 +48,7 @@ export const getListingById = async (req, res, next) => {
 export const createListing = async (req, res, next) => {
   try {
     const {
-      contractListingId,
+      txHash,
       title,
       description,
       category,
@@ -61,9 +61,35 @@ export const createListing = async (req, res, next) => {
     if (!req.user.walletAddress) {
       return res.status(400).json({ message: "Connect a Stellar wallet before creating a listing" });
     }
-    if (contractListingId === undefined || !title || !pricePerUnit || !unit || quantityAvailable === undefined) {
+    if (!txHash || !title || !pricePerUnit || !unit || quantityAvailable === undefined) {
       return res.status(400).json({ message: "Missing required listing fields" });
     }
+
+    // Verify transaction and extract contractListingId
+    const { rpc, scValToNative } = await import('@stellar/stellar-sdk');
+    const server = new rpc.Server("https://soroban-testnet.stellar.org", { allowHttp: false });
+    
+    let txResult;
+    try {
+      // Basic poll since frontend sends it immediately after sendTransaction
+      for (let i = 0; i < 15; i++) {
+        txResult = await server.getTransaction(txHash);
+        if (txResult.status !== "NOT_FOUND") break;
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    } catch (e) {
+      return res.status(500).json({ message: "Failed to verify transaction on blockchain" });
+    }
+
+    if (!txResult || txResult.status !== "SUCCESS") {
+      return res.status(400).json({ message: "Transaction was not successful on the blockchain" });
+    }
+
+    if (!txResult.returnValue) {
+      return res.status(400).json({ message: "Transaction did not return a contractListingId" });
+    }
+
+    const contractListingId = Number(scValToNative(txResult.returnValue));
 
     let imageUrl = null;
     if (req.file) {

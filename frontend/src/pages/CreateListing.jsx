@@ -106,7 +106,7 @@ export default function CreateListing() {
 
     setSubmitting(true);
     try {
-      const { returnValue: contractListingId } = await escrowContract.createListing(wallet, {
+      const { hash: txHash } = await escrowContract.createListing(wallet, {
         title: form.title,
         pricePerUnit: Number(form.pricePerUnit),
         unit: form.unit,
@@ -115,7 +115,7 @@ export default function CreateListing() {
 
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
-      fd.append("contractListingId", contractListingId);
+      fd.append("txHash", txHash);
 
       if (imageMode === "preset" && selectedImageUrl) {
         fd.append("imageUrl", selectedImageUrl);
