@@ -35,9 +35,19 @@ export default function Navbar() {
                 Dashboard
               </Link>
             )}
+            <Link to="/forum" className="text-sm font-medium hover:text-agro-600">
+              Forum
+            </Link>
             <Link to="/feedback" className="text-sm font-medium hover:text-agro-600">
               Feedback
             </Link>
+            <button 
+              onClick={() => document.documentElement.classList.toggle('dark')} 
+              className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              title="Toggle Dark Mode"
+            >
+              🌙
+            </button>
             <WalletButton />
             {user ? (
               <button onClick={handleLogout} className="text-sm font-medium text-gray-500 hover:text-red-600">
