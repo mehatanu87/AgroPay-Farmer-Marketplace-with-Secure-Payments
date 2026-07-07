@@ -49,29 +49,26 @@ jobs:
         uses: actions/cache@v4
         with:
           path: contracts/target/wasm32-unknown-unknown/release/*.wasm
-          key: wasm-v4-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
+          key: wasm-v5-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
 
       - name: Skip build notice
         if: steps.cache_wasm.outputs.cache-hit == 'true' || inputs.skip_build == 'true'
         run: echo "✅ WASM already cached — skipping."
 
-      # Pin to Rust 1.81.0 — last version BEFORE reference-types was default
-      - name: Install Rust 1.81.0 + WASM target
+      - name: Install Rust stable + WASM target
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
-        uses: dtolnay/rust-toolchain@1.81.0
+        uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-
-      - name: Verify Rust version
-        if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
-        run: |
-          rustc --version
-          echo "✅ Using Rust 1.81.0 (no reference-types in WASM)"
 
       - name: Build contract WASM
         if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
         working-directory: contracts/agropay_escrow
+        env:
+          RUSTFLAGS: "-C target-feature=-reference-types"
         run: |
+          echo "Rust: $(rustc --version)"
+          echo "RUSTFLAGS: $RUSTFLAGS"
           cargo build --target wasm32-unknown-unknown --release
           echo "✅ Build complete"
           ls -lah ../target/wasm32-unknown-unknown/release/*.wasm
