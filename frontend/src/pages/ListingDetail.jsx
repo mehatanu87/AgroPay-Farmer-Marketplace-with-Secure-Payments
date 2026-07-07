@@ -145,7 +145,7 @@ export default function ListingDetail() {
               ? "Confirm in wallet..."
               : listing.quantityAvailable === 0
               ? "Out of stock"
-              : "Buy — Pay into Escrow"}
+              : "Buy — Pay into Escrow (V9)"}
           </button>
           <p className="text-xs text-gray-400 text-center">
             Funds are locked in the AgroPay escrow contract and only released to the farmer once you confirm delivery.
