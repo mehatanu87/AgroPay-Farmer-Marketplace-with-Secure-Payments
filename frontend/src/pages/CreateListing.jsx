@@ -205,7 +205,13 @@ export default function CreateListing() {
         {/* Price + Quantity */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="text-sm font-medium">Price per unit (XLM)</label>
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium">Price per unit</label>
+              <select className="text-xs bg-transparent border-none outline-none text-agro-600 font-medium cursor-pointer">
+                <option value="XLM">XLM</option>
+                <option value="USDC">USDC (Coming Soon)</option>
+              </select>
+            </div>
             <input
               type="number" required min="0.01" step="0.01"
               className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm"
