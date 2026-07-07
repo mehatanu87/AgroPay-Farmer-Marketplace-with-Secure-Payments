@@ -67,6 +67,20 @@ To simulate early-stage startup growth, we actively collected feedback from **40
 | U002 | Neha Vikram | nehavikram1697@gmail.com | `GAKKLAG3JJEKXXBHANM3XIDRT5AMVLYXIMU6RNIZMAYYV3BMNQ6YGUYN` | "Rating system for buyers and sellers." | Added 5-star seller rating UI to listing details | [`8795b31`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/8795b31) |
 
 ---
+## Product UI & Screenshots
+
+Below are screenshots demonstrating the AgroPay user interface, mobile responsive design, and analytics tracking:
+
+### Product UI
+![Product UI](./images/product_UI.png)
+
+### Mobile Responsive Design
+![Mobile Responsive](./images/mobile_responsive.png)
+
+### Analytics & Monitoring
+![Analytics](./images/analytics.png)
+
+---
 
 ## Stellar Ledger Transaction Proofs (52 On-Chain Interactions)
 
@@ -163,22 +177,6 @@ agropay/
 ```
 
 ---
-
-## Product UI & Screenshots
-
-Below are screenshots demonstrating the AgroPay user interface, mobile responsive design, and analytics tracking:
-
-### Product UI
-![Product UI](./images/product_UI.png)
-
-### Mobile Responsive Design
-![Mobile Responsive](./images/mobile_responsive.png)
-
-### Analytics & Monitoring
-![Analytics](./images/analytics.png)
-
----
-
 ## Setup & Running Locally
 
 ### Prerequisites
