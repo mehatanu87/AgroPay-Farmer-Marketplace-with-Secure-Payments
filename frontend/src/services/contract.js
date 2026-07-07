@@ -1,6 +1,6 @@
 import {
   Contract,
-  SorobanRpc,
+  rpc,
   TransactionBuilder,
   Networks,
   BASE_FEE,
@@ -14,7 +14,7 @@ const RPC_URL = import.meta.env.VITE_SOROBAN_RPC_URL || "https://soroban-testnet
 const CONTRACT_ID = import.meta.env.VITE_ESCROW_CONTRACT_ID;
 const NETWORK_PASSPHRASE = Networks.TESTNET;
 
-const server = new SorobanRpc.Server(RPC_URL, { allowHttp: false });
+const server = new rpc.Server(RPC_URL, { allowHttp: false });
 
 /**
  * Builds, simulates, signs (via Freighter), and submits a call to the
@@ -44,11 +44,11 @@ export async function callContract(method, args, sourcePublicKey) {
 
   // Simulate first to get required auth + resource footprint.
   const simulated = await server.simulateTransaction(tx);
-  if (SorobanRpc.Api.isSimulationError(simulated)) {
+  if (rpc.Api.isSimulationError(simulated)) {
     throw new Error(`Simulation failed: ${simulated.error}`);
   }
 
-  const prepared = SorobanRpc.assembleTransaction(tx, simulated).build();
+  const prepared = rpc.assembleTransaction(tx, simulated).build();
   const signedXdr = await signXdr(prepared.toXDR(), sourcePublicKey);
 
   const signedTx = TransactionBuilder.fromXDR(signedXdr, NETWORK_PASSPHRASE);
@@ -89,7 +89,7 @@ export const escrowContract = {
       [
         new Address(publicKey).toScVal(),
         nativeToScVal(title, { type: "string" }),
-        nativeToScVal(pricePerUnit, { type: "i128" }),
+        nativeToScVal(BigInt(Math.round(pricePerUnit * 1e7)), { type: "i128" }),
         nativeToScVal(unit, { type: "string" }),
         nativeToScVal(quantityAvailable, { type: "u32" }),
       ],
