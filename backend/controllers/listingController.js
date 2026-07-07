@@ -91,7 +91,7 @@ export const createListing = async (req, res, next) => {
 
     const contractListingId = Number(scValToNative(txResult.returnValue));
 
-    let imageUrl = null;
+    let imageUrl = req.body.imageUrl || null;
     if (req.file) {
       const uploadResult = await new Promise((resolve, reject) => {
         const stream = cloudinary.uploader.upload_stream(
