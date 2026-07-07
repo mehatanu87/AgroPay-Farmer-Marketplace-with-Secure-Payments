@@ -10,17 +10,25 @@ export default function WalletButton() {
 
   if (publicKey) {
     return (
-      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-agro-50 dark:bg-agro-900/40 border border-agro-200 dark:border-agro-800 text-sm font-medium text-agro-700 dark:text-agro-300">
-        <span className="h-2 w-2 rounded-full bg-agro-500 animate-pulse" />
-        <span>{truncate(publicKey)}</span>
-        {balance !== null && (
-          <>
-            <span className="text-agro-400 dark:text-agro-600">|</span>
-            <span className={`tabular-nums transition-all duration-500 ${balanceLoading ? "opacity-50" : "opacity-100"}`}>
-              {balanceLoading && balance === null ? "..." : `${balance} XLM`}
-            </span>
-          </>
-        )}
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-agro-50 dark:bg-agro-900/40 border border-agro-200 dark:border-agro-800 text-sm font-medium text-agro-700 dark:text-agro-300">
+          <span className="h-2 w-2 rounded-full bg-agro-500 animate-pulse" />
+          <span>{truncate(publicKey)}</span>
+          {balance !== null && (
+            <>
+              <span className="text-agro-400 dark:text-agro-600">|</span>
+              <span className={`tabular-nums transition-all duration-500 ${balanceLoading ? "opacity-50" : "opacity-100"}`}>
+                {balanceLoading && balance === null ? "..." : `${balance} XLM`}
+              </span>
+            </>
+          )}
+        </div>
+        <button
+          onClick={disconnect}
+          className="text-xs text-red-500 hover:text-red-700 underline underline-offset-2"
+        >
+          Disconnect
+        </button>
       </div>
     );
   }
