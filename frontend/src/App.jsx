@@ -67,6 +67,10 @@ export default function App() {
 
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <footer className="mt-20 py-8 border-t border-gray-100 dark:border-gray-800 text-center">
+            <p className="text-sm text-gray-500 mb-2">© 2026 AgroPay. Built on Stellar.</p>
+            <button onClick={() => window.alert('Mobile app links coming soon!')} className="text-agro-600 hover:underline text-sm font-medium">Download Mobile App (iOS / Android)</button>
+          </footer>
         </BrowserRouter>
       </WalletProvider>
     </AuthProvider>
