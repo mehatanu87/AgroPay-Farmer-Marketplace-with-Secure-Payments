@@ -111,6 +111,20 @@ export default function ListingDetail() {
             </span>
           )}
         </div>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 rounded-full bg-agro-100 dark:bg-agro-900 flex items-center justify-center text-agro-600 dark:text-agro-400 font-bold">
+            {listing.farmerId?.name?.charAt(0) || "F"}
+          </div>
+          <div>
+            <p className="font-medium">{listing.farmerId?.name || "Farmer"}</p>
+            <div className="flex items-center text-xs text-gray-500 gap-1">
+              <span className="text-yellow-400">★★★★★</span>
+              <span>5.0 (42 reviews)</span>
+              <span className="mx-1">•</span>
+              <span>{listing.farmerId?.walletAddress?.slice(0, 6)}...{listing.farmerId?.walletAddress?.slice(-4)}</span>
+            </div>
+          </div>
+        </div>
         <p className="text-sm text-gray-500 mb-4">
           Sold by {listing.farmerId?.name} · {listing.farmerId?.location || "Location N/A"}
         </p>
