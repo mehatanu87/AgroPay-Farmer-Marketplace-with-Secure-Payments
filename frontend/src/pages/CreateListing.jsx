@@ -299,7 +299,7 @@ export default function CreateListing() {
           disabled={submitting}
           className="w-full py-3 rounded-lg bg-agro-600 hover:bg-agro-700 disabled:opacity-60 text-white font-medium text-sm transition-colors"
         >
-          {submitting ? "Confirm in wallet..." : "Create Listing (Fixed)"}
+          {submitting ? "Confirm in wallet..." : "Create Listing (V3)"}
         </button>
       </form>
     </div>
