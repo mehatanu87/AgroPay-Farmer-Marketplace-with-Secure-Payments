@@ -12,32 +12,56 @@ import AnalyticsEvent from "../models/AnalyticsEvent.js";
 export const createOrder = async (req, res, next) => {
   try {
     const {
-      contractOrderId,
       contractListingId,
       listingId,
       quantity,
       amount,
       fundTxHash,
-      deliveryDeadline,
+      deliveryWindowDays,
     } = req.body;
 
     if (!req.user.walletAddress) {
       return res.status(400).json({ message: "Connect a Stellar wallet before ordering" });
     }
     if (
-      contractOrderId === undefined ||
       contractListingId === undefined ||
       !listingId ||
       !quantity ||
       !amount ||
       !fundTxHash ||
-      !deliveryDeadline
+      !deliveryWindowDays
     ) {
       return res.status(400).json({ message: "Missing required order fields" });
     }
 
     const listing = await Listing.findById(listingId);
     if (!listing) return res.status(404).json({ message: "Listing not found" });
+
+    // Verify transaction and extract contractOrderId
+    const { rpc, scValToNative } = await import('@stellar/stellar-sdk');
+    const server = new rpc.Server("https://soroban-testnet.stellar.org", { allowHttp: false });
+    
+    let txResult;
+    try {
+      for (let i = 0; i < 15; i++) {
+        txResult = await server.getTransaction(fundTxHash);
+        if (txResult.status !== "NOT_FOUND") break;
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    } catch (e) {
+      return res.status(500).json({ message: "Failed to verify transaction on blockchain" });
+    }
+
+    if (!txResult || txResult.status !== "SUCCESS") {
+      return res.status(400).json({ message: "Transaction was not successful on the blockchain" });
+    }
+
+    if (!txResult.returnValue) {
+      return res.status(400).json({ message: "Transaction did not return a contractOrderId" });
+    }
+
+    const contractOrderId = Number(scValToNative(txResult.returnValue));
+    const deliveryDeadline = new Date(Date.now() + deliveryWindowDays * 24 * 60 * 60 * 1000);
 
     const order = await Order.create({
       contractOrderId,

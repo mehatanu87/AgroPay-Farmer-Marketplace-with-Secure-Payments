@@ -55,17 +55,14 @@ export default function ListingDetail() {
       });
 
       // 2. Index the resulting order in the backend for dashboards/search.
-      const amount = listing.pricePerUnit * quantity;
-      const deliveryDeadline = new Date(Date.now() + deliveryDays * 86400000).toISOString();
-
       const { data } = await orderApi.create({
-        contractOrderId,
-        contractListingId: listing.contractListingId,
         listingId: listing._id,
-        quantity,
-        amount,
+        contractListingId: listing.contractListingId,
+        contractOrderId,
+        quantity: Number(quantity),
+        amount: Number(listing.pricePerUnit * quantity),
+        deliveryWindowDays: Number(deliveryDays),
         fundTxHash: hash,
-        deliveryDeadline,
       });
 
       toast.success("Order placed and funds locked in escrow!");
