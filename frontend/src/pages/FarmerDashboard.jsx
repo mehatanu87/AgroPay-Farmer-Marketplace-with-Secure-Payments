@@ -96,10 +96,22 @@ export default function FarmerDashboard() {
         </Link>
       </div>
 
-      <div className="grid sm:grid-cols-3 gap-4 mb-10">
+      <div className="grid sm:grid-cols-4 gap-4 mb-10">
         <StatCard label="Active Listings" value={listings.filter((l) => l.active).length} />
+        <StatCard 
+          label="Total Listing Value" 
+          value={`${listings.filter((l) => l.active).reduce((sum, l) => sum + (l.pricePerUnit * l.quantityAvailable), 0).toFixed(2)} XLM`} 
+        />
         <StatCard label="Total Orders" value={orders.length} />
         <StatCard label="Revenue Released" value={`${totalRevenue.toFixed(2)} XLM`} />
+      </div>
+
+      <div className="mb-10 p-5 rounded-xl border border-agro-200 bg-agro-50 dark:bg-agro-900/20 dark:border-agro-800 flex items-center justify-between">
+        <div>
+          <h2 className="font-bold text-agro-800 dark:text-agro-400 text-lg">Farm Weather Forecast</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Sunny · 28°C · Perfect conditions for harvesting.</p>
+        </div>
+        <div className="text-4xl">☀️</div>
       </div>
 
       <h2 className="font-semibold mb-4">Incoming Orders</h2>
