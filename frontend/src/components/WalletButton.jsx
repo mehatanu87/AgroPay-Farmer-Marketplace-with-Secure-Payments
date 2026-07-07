@@ -6,7 +6,7 @@ function truncate(address) {
 }
 
 export default function WalletButton() {
-  const { publicKey, connecting, connect, balance, balanceLoading } = useWallet();
+  const { publicKey, connecting, connect, balance, balanceLoading, disconnect } = useWallet();
 
   if (publicKey) {
     return (
