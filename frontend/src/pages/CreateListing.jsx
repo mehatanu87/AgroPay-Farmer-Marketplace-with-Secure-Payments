@@ -128,7 +128,7 @@ export default function CreateListing() {
       toast.success("Listing created and live on-chain!");
       navigate("/farmer-dashboard");
     } catch (err) {
-      toast.error(err.message || err.response?.data?.message || "Failed to create listing");
+      toast.error(err.response?.data?.message || err.message || "Failed to create listing");
     } finally {
       setSubmitting(false);
     }
@@ -299,7 +299,7 @@ export default function CreateListing() {
           disabled={submitting}
           className="w-full py-3 rounded-lg bg-agro-600 hover:bg-agro-700 disabled:opacity-60 text-white font-medium text-sm transition-colors"
         >
-          {submitting ? "Confirm in wallet..." : "Create Listing (V7)"}
+          {submitting ? "Confirm in wallet..." : "Create Listing (V8)"}
         </button>
       </form>
     </div>
