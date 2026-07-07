@@ -42,12 +42,28 @@ export async function callContract(method, args, sourcePublicKey) {
     .setTimeout(60)
     .build();
 
+  // Simulate first to get required auth + resource footprint.
+  let simulated;
+  try {
+    simulated = await server.simulateTransaction(tx);
+  } catch (e) {
+    throw new Error(`Simulation Error: ${e.message}`);
+  }
+
+  if (rpc.Api.isSimulationError(simulated)) {
+    throw new Error(`Simulation failed: ${simulated.error}`);
+  }
+
+  let prepared;
+  try {
+    prepared = rpc.assembleTransaction(tx, simulated).build();
+  } catch (e) {
+    throw new Error(`Assemble Error: ${e.message}`);
+  }
+
   let signedXdr;
   try {
-    // We send the raw Transaction directly to Freighter without simulating.
-    // Freighter's extension will automatically simulate the transaction and
-    // attach the necessary resource footprint for Protocol 22.
-    signedXdr = await signXdr(tx.toXDR(), sourcePublicKey);
+    signedXdr = await signXdr(prepared.toXDR(), sourcePublicKey);
   } catch (e) {
     throw new Error(`Freighter Error: ${e.message}`);
   }
