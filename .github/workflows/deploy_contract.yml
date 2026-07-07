@@ -44,25 +44,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check WASM cache
-        id: cache_wasm
-        uses: actions/cache@v4
-        with:
-          path: contracts/target/wasm32-unknown-unknown/release/*.wasm
-          key: wasm-v5-${{ hashFiles('contracts/**/*.rs', 'contracts/**/*.toml') }}
-
-      - name: Skip build notice
-        if: steps.cache_wasm.outputs.cache-hit == 'true' || inputs.skip_build == 'true'
-        run: echo "✅ WASM already cached — skipping."
-
       - name: Install Rust stable + WASM target
-        if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
+        if: inputs.skip_build != 'true'
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
 
+      - name: Cache cargo registry (deps only, not target)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: cargo-deps-${{ hashFiles('contracts/**/Cargo.toml') }}
+          restore-keys: cargo-deps-
+
       - name: Build contract WASM
-        if: steps.cache_wasm.outputs.cache-hit != 'true' && inputs.skip_build != 'true'
+        if: inputs.skip_build != 'true'
         working-directory: contracts/agropay_escrow
         env:
           RUSTFLAGS: "-C target-feature=-reference-types"
@@ -73,18 +71,42 @@ jobs:
           echo "✅ Build complete"
           ls -lah ../target/wasm32-unknown-unknown/release/*.wasm
 
+      # wasm-opt forcefully strips reference-types from the binary
+      - name: Install wasm-opt and strip reference-types
+        if: inputs.skip_build != 'true'
+        run: |
+          sudo apt-get install -y binaryen
+          WASM=$(find contracts/target/wasm32-unknown-unknown/release -name '*.wasm' ! -name '*.optimized.wasm' | head -1)
+          echo "Processing: $WASM"
+          
+          # Print WASM features before
+          echo "Before wasm-opt:"
+          wasm-dis "$WASM" 2>/dev/null | grep -i "reference\|funcref\|externref" | head -5 || echo "(no feature headers found)"
+          
+          # Strip reference-types and optimize
+          wasm-opt "$WASM" \
+            --disable-reference-types \
+            --disable-gc \
+            -O2 \
+            -o "${WASM%.wasm}.clean.wasm"
+          
+          # Replace original with cleaned version
+          mv "${WASM%.wasm}.clean.wasm" "$WASM"
+          echo "✅ wasm-opt complete: $(du -sh $WASM | cut -f1)"
+
       - name: Upload WASM artifact
         uses: actions/upload-artifact@v4
         with:
           name: agropay-escrow-wasm
-          path: contracts/target/wasm32-unknown-unknown/release/*.wasm
-          retention-days: 30
+          path: contracts/target/wasm32-unknown-unknown/release/agropay_escrow.wasm
+          retention-days: 5
+          overwrite: true
 
-      - name: Verify WASM exists
+      - name: Verify WASM
         run: |
-          WASM=$(find contracts/target/wasm32-unknown-unknown/release -name '*.wasm' | head -1)
+          WASM=$(find contracts/target/wasm32-unknown-unknown/release -name 'agropay_escrow.wasm' | head -1)
           if [ -n "$WASM" ]; then
-            echo "✅ WASM ready: $(du -sh $WASM | cut -f1) — $WASM"
+            echo "✅ WASM ready: $(du -sh $WASM | cut -f1)"
           else
             echo "❌ WASM not found!"
             exit 1
