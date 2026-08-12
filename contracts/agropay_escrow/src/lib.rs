@@ -99,6 +99,7 @@ impl AgroPayEscrow {
     /// One-time setup. `token` is the Stellar Asset Contract address used
     /// for payments (e.g. USDC or native XLM SAC on testnet).
     pub fn initialize(env: Env, admin: Address, token: Address) -> Result<(), Error> {
+        // Ensure the contract can only be initialized once
         if env.storage().instance().has(&DataKey::Admin) {
             return Err(Error::AlreadyInitialized);
         }
