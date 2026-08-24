@@ -106,12 +106,30 @@ export default function FarmerDashboard() {
         <StatCard label="Revenue Released" value={`${totalRevenue.toFixed(2)} XLM`} />
       </div>
 
-      <div className="mb-10 p-5 rounded-xl border border-agro-200 bg-agro-50 dark:bg-agro-900/20 dark:border-agro-800 flex items-center justify-between">
-        <div>
-          <h2 className="font-bold text-agro-800 dark:text-agro-400 text-lg">Farm Weather Forecast</h2>
-          <p className="text-sm text-gray-600 dark:text-gray-400">Sunny · 28°C · Perfect conditions for harvesting.</p>
+      <div className="grid md:grid-cols-2 gap-4 mb-10">
+        <div className="p-5 rounded-xl border border-agro-200 bg-agro-50 dark:bg-agro-900/20 dark:border-agro-800 flex items-center justify-between">
+          <div>
+            <h2 className="font-bold text-agro-800 dark:text-agro-400 text-lg">Farm Weather Forecast</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Sunny · 28°C · Perfect conditions for harvesting.</p>
+          </div>
+          <div className="text-4xl">☀️</div>
         </div>
-        <div className="text-4xl">☀️</div>
+
+        <div className="p-5 rounded-xl border border-agro-200 dark:border-agro-800 flex flex-col justify-center">
+          <h2 className="font-bold text-lg mb-2 flex items-center gap-2">
+            🔔 Notifications
+          </h2>
+          <div className="space-y-2">
+            {orders.filter(o => o.status === 'released').slice(0, 2).map(o => (
+              <div key={o._id} className="text-sm p-2 rounded bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400">
+                ✅ Funds released for {o.listing?.title} ({o.amount} XLM)
+              </div>
+            ))}
+            {orders.filter(o => o.status === 'released').length === 0 && (
+              <p className="text-sm text-gray-500">No new fund releases yet.</p>
+            )}
+          </div>
+        </div>
       </div>
 
       <h2 className="font-semibold mb-4">Incoming Orders</h2>
