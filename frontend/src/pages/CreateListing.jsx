@@ -299,15 +299,25 @@ export default function CreateListing() {
               <input
                 type="file"
                 accept="image/*"
-                className="w-full text-sm border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2"
-                onChange={(e) => setCustomImage(e.target.files[0])}
+                multiple
+                className="w-full text-sm border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 mb-2"
+                onChange={(e) => {
+                  const files = Array.from(e.target.files);
+                  setCustomImage(files.length > 0 ? files : null);
+                }}
               />
-              {customImage && (
-                <img
-                  src={URL.createObjectURL(customImage)}
-                  alt="preview"
-                  className="mt-2 rounded-lg h-32 object-cover"
-                />
+              <p className="text-xs text-gray-500 mb-2">You can now upload multiple images!</p>
+              {customImage && Array.isArray(customImage) && (
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {customImage.map((file, idx) => (
+                    <img
+                      key={idx}
+                      src={URL.createObjectURL(file)}
+                      alt={`preview ${idx}`}
+                      className="rounded-lg h-24 object-cover border border-gray-200"
+                    />
+                  ))}
+                </div>
               )}
             </div>
           )}
