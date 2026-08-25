@@ -38,6 +38,14 @@ export default function Navbar() {
             <Link to="/forum" className="text-sm font-medium hover:text-agro-600">
               Forum
             </Link>
+            <a href="https://developers.stellar.org/docs/tokens/usdc" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-600 hover:text-blue-700">
+              Bridge USDC
+            </a>
+            <select className="text-sm font-medium bg-transparent border-none outline-none cursor-pointer text-gray-700 dark:text-gray-300">
+              <option value="en">English</option>
+              <option value="hi">हिंदी (Hindi)</option>
+              <option value="mr">मराठी (Marathi)</option>
+            </select>
             <Link to="/feedback" className="text-sm font-medium hover:text-agro-600">
               Feedback
             </Link>
