@@ -9,3 +9,7 @@ html {
 body {
   @apply text-gray-900 dark:text-gray-100 antialiased;
 }
+
+.mobile-padding {
+  @apply p-4 md:p-8;
+}
