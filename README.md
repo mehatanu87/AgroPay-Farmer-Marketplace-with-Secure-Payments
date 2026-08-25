@@ -15,8 +15,9 @@ AgroPay is a decentralized, transparent, and low-cost agricultural marketplace a
 - 🌐 **Live Platform**: [https://agro-pay-farmer-marketplace-with-se.vercel.app/](https://agro-pay-farmer-marketplace-with-se.vercel.app/)
 - 🔗 **Example Transaction Hash**: [`4a7029749f10163616c19ece9777f782e269f352efd4f28d644731e4a64406bf`](https://stellar.expert/explorer/testnet/tx/4a7029749f10163616c19ece9777f782e269f352efd4f28d644731e4a64406bf)
 - 📜 **AgroPay Contract ID**: [`CDLMALEHLMMQRYDDS6T32SR7HCV6DGEU3NNO34TYUIXNHHSCGRFKGRGF`](https://lab.stellar.org/r/testnet/contract/CDLMALEHLMMQRYDDS6T32SR7HCV6DGEU3NNO34TYUIXNHHSCGRFKGRGF)
-- 👥 **User Onboarding Data**: [View Exported Google Form Responses](https://docs.google.com/spreadsheets/d/1UjMNb7cU44GxdLXnJw-fVDPaVhK9lHMVRlo7bYw5F30/edit?usp=sharing)
-- 📝 **Google Form Link**: [Provide Feedback](https://docs.google.com/forms/d/e/1FAIpQLSeU73ZNg2dy6NKFk1Z2MkdKEsgcBDeM-LbIVmSp8SzrJhcoHQ/viewform?usp=dialog)
+- ⚡ **Latest Transaction Example**: [View on Stellar Expert](https://stellar.expert/explorer/testnet/tx/a1c189bc595c903e520bd544a99987d1a78ea9357df379a0616014079b7c1c5f)
+- 📝 **Google Form (User Onboarding & Feedback)**: [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSeU73ZNg2dy6NKFk1Z2MkdKEsgcBDeM-LbIVmSp8SzrJhcoHQ/viewform?usp=dialog)
+- 📊 **Google Sheet (Verifiable Data)**: [View Sheet](https://docs.google.com/spreadsheets/d/1ljqWRN9TZjoO7IjrwrdnMXl0mkIrPOyfexRHsPiBMlE/edit?usp=sharing)
 
 ## 🌟 Key Features
 
@@ -56,55 +57,47 @@ Here is a visual walkthrough of the AgroPay interface and capabilities, covering
 | <img src="./images/product_UI.png" width="400" alt="Dashboard UI"> | <img src="./images/mobile_responsive.png" width="400" alt="Mobile View"> |
 | **Clean, visual dashboard showing active listings and status** | **Fully responsive UI tested across mobile viewports** |
 
-| Analytics & Monitoring Setup | 
-|:---:|
-| <img src="./images/analytics.png" width="400" alt="Analytics"> | 
-| **On-chain derived metrics and real-time event monitoring** | 
+| Analytics & Monitoring Setup | On-Chain Analytics Overview |
+|:---:|:---:|
+| <img src="./images/analytics.png" width="400" alt="Analytics"> | <img src="./images/on%20chain%20analytics.png" width="400" alt="On Chain Analytics"> |
+| **On-chain derived metrics and real-time event monitoring** | **Detailed on-chain analytics and descriptions of network activity** |
 
 ## 👥 User Onboarding
 
 We successfully onboarded **real users** with Stellar Testnet wallets and verified on-chain transactions to distribute payments seamlessly. 
 
 ### 1. Users Onboarded (Recent Cohort)
-| User ID | Name | Email | Wallet Address | Feedback Summary |
-|---|---|---|---|---|
-| U001 | Vivaan Rahul | vivaanrahul2193@gmail.com | `GAM7LAFUQJXY5J35YBUHGXXKEPN3ISG4IK4MLMESAMSXN4ZFHEBS3BM2` | "Bulk upload product listings. Thanks." |
-| U002 | Neha Vikram | nehavikram1697@gmail.com | `GAKKLAG3JJEKXXBHANM3XIDRT5AMVLYXIMU6RNIZMAYYV3BMNQ6YGUYN` | "Rating system for buyers and sellers. " |
-| U003 | Pooja Rahul | poojarahul3909@gmail.com | `GAMVPFZUJR4YXYOEWNVZ3L2UXCE4IJW5XVVI3DDAEOZCWJQUDKU5EJGC` | "Support for other tokens besides XLM. Thanks." |
-| U004 | Arjun Meera | arjunmeera8872@gmail.com | `GD3VGCN767FANB4CECLGUUDKUOVPENQG7TH74XK3RUWYZ74YRHJDGNOG7` | "More detailed analytics on dashboard. " |
-| U005 | Divya Neha | divyaneha7851@gmail.com | `GB5N2ETFCGAX2SH3ANA466KOUY66IMQ2MVLZVOFEMIN42QLF3BVF6K4` | "Add more language options. Thanks." |
-| U006 | Vikram Neha | vikramneha3692@gmail.com | `GBUB3E4ENTHP6DGPSVDZ3O7VRJIMAGY2FZZBPSISHICI3ME7LBPNF3PG` | "Rating system for buyers and sellers. " |
-| U007 | Aditya Aarohi | adityaaarohi4695@gmail.com | `GBBGGSBYXJDR2DNHJARNLFHSV226FVYQ4RZYY5V3TQ5ZJ4VBPQJSYWVS` | "SMS notifications for transactions. Thanks." |
+| User ID | Name | Email | Role | Wallet Address | Feedback Summary |
+|---|---|---|---|---|---|
+| U001 | Suresh Patel | sureshpatel993@gmail.com | Farmer | `GCFST2ZOAQ3JAYT2HODBWCW3GVX67VRGYHBXPSCLU3ZQXL2IBMYGSZXR` | "...adding a notification system for when funds are released would be very helpful" |
+| U002 | Anish Kumar | anishkumarmehta387077@gmail.com | Buyer | `GCG3WZ5R5DHL4XA7ER3VKRTOH7ODRPNYDAQMI66LHMOAVOCHS6A35J3M` | "...would be awesome if we could see a historical price chart for different crop types" |
+| U003 | Khushi Singh | singhkhushi0719@gmail.com | Buyer | `GD65DOOOH4MRNNJUJSP364RSVFX7Q2NSYN3AU6IO7K44HIR4AZUOIWXS` | "...allow farmers to upload multiple images of their produce instead of just one" |
+| U004 | Arti Desai | aartidesai211@gmail.com | Farmer | `GCRLGZXFIRYUZZPON232TWQBD2HG6RFLTSEAZ6ESM7IBIKNH7T7FOE3P` | "...clear tutorial on how to bridge to mainnet USDC eventually would really help" |
+| U005 | Rekha Nair | rekhanair34@gmail.com | Buyer | `GCETQ36PPT3B6CFQ7XROLPIJA3LBUJOLDD33P4SO7UIMFQQQDPHGGMLO` | "...Adding multi-language support (like Hindi and Marathi) would definitely help" |
+| U006 | Rahul Kumar | rahulkumarsingh007@gmail.com | Buyer | `GD27HB53D4X6M5F2R3LT6BL34LOTBC5FKFTN3MY2J4SEDFYQW2F2FAL5` | "...Clearer status indicators would improve the experience" |
+| U007 | Prakash | prakashjoshi55@gmail.com | Farmer | `GDAQ5C64WEMPZKPZUVCA5572DABDZZGI5KFTBBHQQ65JJE2PCIYOGCBU` | "...add a messaging system so buyers can negotiate bulk orders" |
 
 ### 2. Stellar Ledger Transaction Proofs (Verified interactions)
 
-| # | Action / Method | Participants | Amount | Transaction Hash (StellarExpert Ledger Link) |
-|---|---|---|---|---|
-| 1 | `create_listing` | Aarav (farmer) | 91 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4a7029749f10163616c19ece9777f782e269f352efd4f28d644731e4a64406bf) |
-| 2 | `place_order` | Vivaan (buyer) | 72 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/e714da5475c87f058588052440a96acdb1d22b8a6c5b3b3849a9dd8d6d7694e3) |
-| 3 | `create_listing` | Aditya (farmer) | 11 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/49166c68fe8a6431d0e5ff5dd2c4d4c6bba9f8d5febc63505b37e9de20b35cea) |
-| 4 | `place_order` | Vihaan (buyer) | 49 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/805fd77caa86aa3edf2ce1c99981500937a728ce28b4a37c1a73acd299fd0bdf) |
-| 5 | `create_listing` | Arjun (farmer) | 29 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/36b38e81b17558c30513fd580a16ec70323c728c686f6fd76f9d85e3fae08a6a) |
-| 6 | `place_order` | Sai (buyer) | 88 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/2f0a0ca3a693c890eceb37f2e203975b0d667a358e09afed735d643ee9ee96b8) |
-| 7 | `create_listing` | Ayaan (farmer) | 29 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/3d144e11cb160864626ea4109b1c76804be1c8050a8842005ed1c7299d5cb548) |
-| 8 | `place_order` | Krishna (buyer) | 19 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/a764e0b2f585b55e25d5b4a274c6608768972b2d5fef673c2bba1f4a2716fe48) |
-| 9 | `create_listing` | Ishaan (farmer) | 57 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/d54bddc03f838b7dea025212dd247b2aaa78f3b3a80798d68f2fb8cd29a5fc11) |
-| 10 | `place_order` | Shaurya (buyer) | 94 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/973864faf62854ed2488d989caee1595479d64f406689842278eae9e147b307c) |
-| 11 | `create_listing` | Aarohi (farmer) | 91 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/759786b1bec4b048ac7dc471d4911825abd71341821c848115dfaba548799399) |
-| 12 | `place_order` | Ananya (buyer) | 28 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/9e6a14e81c39a3552d5e538e12df9dc66734b26f5265e4af6c0e9e8edb809da7) |
-| 13 | `create_listing` | Diya (farmer) | 15 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/100c03325618705b2ef3733e6b40b32d5ee8b78bfd16e74c6dd16686dffca708) |
-| 14 | `create_listing` | Karan (farmer) | 100 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/978a98bfbe59a302e86e0a2be0e27e9568dfadbfab3a409ceb9d8a161f227c04) |
-| 15 | `create_listing` | Swati (farmer) | 130 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4293192f26a732276eec3425cfaca26d36c9ebf29259a918f9c4baa255450f0d) |
-| 16 | `create_listing` | Divya (farmer) | 140 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/92219cae205b623761dc9722509c726726bdbd4cd01b374bb4d7c59973455f73) |
+| # | Action / Method | Participants | Transaction Hash (StellarExpert Ledger Link) |
+|---|---|---|---|
+| 1 | `smart_contract_call` | Suresh Patel | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4c1daffea4742ae922121d33b22f498c103a1f16d2ba0741a65b5c9ba2251d31) |
+| 2 | `smart_contract_call` | Anish Kumar | [View Tx Link](https://stellar.expert/explorer/testnet/tx/ab37927fbb39f7211730a3628989506f7c5c88177818fee7b02b3bc2286e8bbe) |
+| 3 | `smart_contract_call` | Khushi Singh | [View Tx Link](https://stellar.expert/explorer/testnet/tx/417818629b2638ea1b630795b921970b977bcc526c47320a2f53e30b6e7162c0) |
+| 4 | `smart_contract_call` | Arti Desai | [View Tx Link](https://stellar.expert/explorer/testnet/tx/b7ca0a4c3fad0f830ecbfbe50c22c05bb7bcd917664d954ff49ff9006477b6f4) |
+| 5 | `smart_contract_call` | Rekha Nair | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4e5e308ad750d0b987a968223bf9e8270ae1fae4a31257b751e1ac9b707d72d4) |
+| 6 | `smart_contract_call` | Rahul Kumar | [View Tx Link](https://stellar.expert/explorer/testnet/tx/876b58c7e8f73edd1fe492a81757c50e211e618def4b0d95619e8c01376013ef) |
+| 7 | `smart_contract_call` | Prakash | [View Tx Link](https://stellar.expert/explorer/testnet/tx/a1c189bc595c903e520bd544a99987d1a78ea9357df379a0616014079b7c1c5f) |
 
 ### 3. Feedback Implementation Log
 
 | User ID | Feedback Summary | Improvement Made | Git Commit ID |
 |---------|------------------|------------------|---------------|
-| U010 | "Dark/light mode toggle." | Added Dark Mode toggle in Navbar | [`46236af`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/46236af) |
-| U018 | "Community forum for farmers." | Added Community Forum link in Navbar | [`46236af`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/46236af) |
-| U026 | "Price negotiation feature." | Added Make an Offer button on listings | [`3cd4119`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/3cd4119) |
-| U030 | "Chat feature between buyers and farmers." | Added Message Farmer button | [`3cd4119`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/3cd4119) |
+| U001 | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
+| U003 | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
+| U004 | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U005 | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U006 | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
 
 ---
 
