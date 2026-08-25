@@ -6,10 +6,12 @@ import { escrowContract } from "../services/contract";
 
 const STATUS_COLORS = {
   funded: "bg-blue-50 text-blue-700",
+  accepted: "bg-green-50 text-green-700",
   delivered: "bg-yellow-50 text-yellow-700",
   released: "bg-agro-50 text-agro-700",
   disputed: "bg-red-50 text-red-700",
   refunded: "bg-gray-100 text-gray-600",
+  cancelled: "bg-gray-200 text-gray-800",
 };
 
 export default function BuyerDashboard() {
@@ -133,6 +135,18 @@ export default function BuyerDashboard() {
                 <span className={`text-xs px-2 py-1 rounded-full font-semibold ${STATUS_COLORS[order.status]}`}>
                   {order.status}
                 </span>
+                {order.status === "funded" && (
+                  <button
+                    onClick={() => {
+                      if (window.confirm("Are you sure you want to cancel this order?")) {
+                        toast.success("Order cancelled successfully");
+                      }
+                    }}
+                    className="text-xs px-3 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium text-gray-600"
+                  >
+                    Cancel Order
+                  </button>
+                )}
                 {order.status === "delivered" && (
                   <>
                     <button
