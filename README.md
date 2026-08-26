@@ -102,6 +102,9 @@ The following table provides verified StellarExpert explorer links for the trans
 | 11 | `create_listing` | Aarohi (farmer) | 91 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/759786b1bec4b048ac7dc471d4911825abd71341821c848115dfaba548799399) |
 | 12 | `place_order` | Ananya (buyer) | 28 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/9e6a14e81c39a3552d5e538e12df9dc66734b26f5265e4af6c0e9e8edb809da7) |
 | 13 | `create_listing` | Diya (farmer) | 15 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/100c03325618705b2ef3733e6b40b32d5ee8b78bfd16e74c6dd16686dffca708) |
+| 14 | `create_listing` | Karan (farmer) | 100 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/978a98bfbe59a302e86e0a2be0e27e9568dfadbfab3a409ceb9d8a161f227c04) |
+| 15 | `create_listing` | Swati (farmer) | 130 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4293192f26a732276eec3425cfaca26d36c9ebf29259a918f9c4baa255450f0d) |
+| 16 | `create_listing` | Divya (farmer) | 140 XLM | [View Tx Link](https://stellar.expert/explorer/testnet/tx/92219cae205b623761dc9722509c726726bdbd4cd01b374bb4d7c59973455f73) |
 
 ---
 
