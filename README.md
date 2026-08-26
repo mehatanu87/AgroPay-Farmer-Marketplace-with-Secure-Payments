@@ -101,6 +101,8 @@ We successfully onboarded over 50 **real users** (60 total) with Stellar Testnet
 | 12 | `smart_contract_call` | Geeta Bhat | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4293192f26a732276eec3425cfaca26d36c9ebf29259a918f9c4baa255450f0d) |
 | 13 | `smart_contract_call` | Vijay Pillai | `GDFHTP2Q2E5B52QEE6NIFXFYTAYJIF2NKKW3WJZYNY6UKFIV6C6A34F5` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1f52d0a0d0a514d0f5c1d63673f47e335293d0c242c75a5e3f1604a11f9746fb) |
 
+For a full analysis of all 60 user responses and our complete product iteration roadmap, please see the [User Feedback Summary](./USER_FEEDBACK_SUMMARY.md).
+
 ### 3. Feedback Implementation Log
 
 | User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
