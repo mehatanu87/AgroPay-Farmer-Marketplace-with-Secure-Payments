@@ -80,6 +80,18 @@ export default function FarmerDashboard() {
     }
   };
 
+  const toggleVisibility = async (listingId, currentStatus) => {
+    try {
+      await listingApi.setStatus(listingId, !currentStatus);
+      setListings((prev) =>
+        prev.map((l) => (l._id === listingId ? { ...l, active: !currentStatus } : l))
+      );
+      toast.success(`Listing ${!currentStatus ? "activated" : "hidden"} successfully`);
+    } catch (error) {
+      toast.error("Failed to update listing status");
+    }
+  };
+
   const totalRevenue = orders
     .filter((o) => o.status === "released")
     .reduce((sum, o) => sum + o.amount, 0);
@@ -188,13 +200,21 @@ export default function FarmerDashboard() {
               <p className="text-xs text-gray-500">
                 {listing.pricePerUnit} XLM / {listing.unit} · {listing.quantityAvailable} left
               </p>
-              <span
-                className={`inline-block mt-2 text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                  listing.active ? "bg-agro-50 text-agro-700" : "bg-gray-100 text-gray-500"
-                }`}
-              >
-                {listing.active ? "Active" : "Inactive"}
-              </span>
+              <div className="flex items-center justify-between mt-2">
+                <span
+                  className={`inline-block text-[10px] px-2 py-0.5 rounded-full font-semibold ${
+                    listing.active ? "bg-agro-50 text-agro-700" : "bg-gray-100 text-gray-500"
+                  }`}
+                >
+                  {listing.active ? "Active" : "Hidden"}
+                </span>
+                <button
+                  onClick={() => toggleVisibility(listing._id, listing.active)}
+                  className="text-xs text-gray-500 hover:text-gray-700 underline"
+                >
+                  {listing.active ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
           ))}
         </div>

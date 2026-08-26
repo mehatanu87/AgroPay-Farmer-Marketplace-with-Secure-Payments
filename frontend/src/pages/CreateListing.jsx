@@ -192,13 +192,18 @@ export default function CreateListing() {
           </div>
           <div>
             <label className="text-sm font-medium">Unit</label>
-            <input
+            <select
               required
-              placeholder="kg, bag, crate..."
               className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent px-3 py-2 text-sm"
               value={form.unit}
               onChange={(e) => setForm({ ...form, unit: e.target.value })}
-            />
+            >
+              <option value="kg">kg</option>
+              <option value="bag">bag</option>
+              <option value="crate">crate</option>
+              <option value="Quintals">Quintals</option>
+              <option value="Tonnes">Tonnes</option>
+            </select>
           </div>
         </div>
 
