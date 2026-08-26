@@ -25,6 +25,9 @@ jobs:
             ~/.cargo/git
             contracts/target
           key: cargo-${{ hashFiles('contracts/**/Cargo.toml') }}
+      - name: Cargo update
+        working-directory: contracts/agropay_escrow
+        run: cargo update
       - name: Cargo fmt
         working-directory: contracts/agropay_escrow
         run: cargo fmt -- --check || echo "Formatting issues found (ignoring for now)"
