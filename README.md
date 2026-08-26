@@ -76,28 +76,40 @@ We successfully onboarded **real users** with Stellar Testnet wallets and verifi
 | U005 | Rekha Nair | rekhanair34@gmail.com | Buyer | `GCETQ36PPT3B6CFQ7XROLPIJA3LBUJOLDD33P4SO7UIMFQQQDPHGGMLO` | "...Adding multi-language support (like Hindi and Marathi) would definitely help" |
 | U006 | Rahul Kumar | rahulkumarsingh007@gmail.com | Buyer | `GD27HB53D4X6M5F2R3LT6BL34LOTBC5FKFTN3MY2J4SEDFYQW2F2FAL5` | "...Clearer status indicators would improve the experience" |
 | U007 | Prakash | prakashjoshi55@gmail.com | Farmer | `GDAQ5C64WEMPZKPZUVCA5572DABDZZGI5KFTBBHQQ65JJE2PCIYOGCBU` | "...add a messaging system so buyers can negotiate bulk orders" |
+| U008 | Sandeep Bhat | sandeepbhat99@gmail.com | Buyer | `GA6LWVBYQV5RJU5PRRBNB3W4UTUHUVMWH2QDN2A6UQL2H4EFYRO3PTBE` | "...nice to have a buyer verification badge system to highlight trusted buyers" |
+| U009 | Sunil Ghosh | sunilghosh55@gmail.com | Farmer | `GBCTYEQWNX7XZQWOISZ5PUIXNB4WSZVUTYEQKDFRFXZDE6Y4P22WYNQD` | "...Maybe add offline caching so I can draft listings without a connection" |
+| U010 | AKSHARA KAPOOR | ashakapoor994@gmail.com | Buyer | `GBYWKSNHUVNP4AZK45LOFHNHH66FFIRR7RQN73AXBGEQORTHTQAJLZNV` | "...Integrating USDC as the primary stablecoin for settlements would remove price volatility risks" |
+| U011 | Ashok tiwari | ashoktiwari2001@gmail.com | Buyer | `GALWDLYQJMGGAT7Q3TXVF6QGYZ2RIGZM2WFA2D2WXCRZ47YN5FHOD6YP` | "...One addition could be a CSV export of my monthly sales data" |
+| U012 | Geeta Bhat | geetabhat770@gmail.com | Buyer | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | "...suggest adding a feature to partially release funds for milestone deliveries" |
+| U013 | Vijay Pillai | vijaypillai77@gmail.com | Buyer | `GDFHTP2Q2E5B52QEE6NIFXFYTAYJIF2NKKW3WJZYNY6UKFIV6C6A34F5` | "...it would be great to see hardware wallet support added in the future" |
 
 ### 2. Stellar Ledger Transaction Proofs (Verified interactions)
 
-| # | Action / Method | Participants | Transaction Hash (StellarExpert Ledger Link) |
-|---|---|---|---|
-| 1 | `smart_contract_call` | Suresh Patel | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4c1daffea4742ae922121d33b22f498c103a1f16d2ba0741a65b5c9ba2251d31) |
-| 2 | `smart_contract_call` | Anish Kumar | [View Tx Link](https://stellar.expert/explorer/testnet/tx/ab37927fbb39f7211730a3628989506f7c5c88177818fee7b02b3bc2286e8bbe) |
-| 3 | `smart_contract_call` | Khushi Singh | [View Tx Link](https://stellar.expert/explorer/testnet/tx/417818629b2638ea1b630795b921970b977bcc526c47320a2f53e30b6e7162c0) |
-| 4 | `smart_contract_call` | Arti Desai | [View Tx Link](https://stellar.expert/explorer/testnet/tx/b7ca0a4c3fad0f830ecbfbe50c22c05bb7bcd917664d954ff49ff9006477b6f4) |
-| 5 | `smart_contract_call` | Rekha Nair | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4e5e308ad750d0b987a968223bf9e8270ae1fae4a31257b751e1ac9b707d72d4) |
-| 6 | `smart_contract_call` | Rahul Kumar | [View Tx Link](https://stellar.expert/explorer/testnet/tx/876b58c7e8f73edd1fe492a81757c50e211e618def4b0d95619e8c01376013ef) |
-| 7 | `smart_contract_call` | Prakash | [View Tx Link](https://stellar.expert/explorer/testnet/tx/a1c189bc595c903e520bd544a99987d1a78ea9357df379a0616014079b7c1c5f) |
+| # | Action / Method | Participants | Wallet Address | Transaction Hash (StellarExpert Ledger Link) |
+|---|---|---|---|---|
+| 1 | `smart_contract_call` | Suresh Patel | `GCFST2ZOAQ3JAYT2HODBWCW3GVX67VRGYHBXPSCLU3ZQXL2IBMYGSZXR` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4c1daffea4742ae922121d33b22f498c103a1f16d2ba0741a65b5c9ba2251d31) |
+| 2 | `smart_contract_call` | Anish Kumar | `GCG3WZ5R5DHL4XA7ER3VKRTOH7ODRPNYDAQMI66LHMOAVOCHS6A35J3M` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/ab37927fbb39f7211730a3628989506f7c5c88177818fee7b02b3bc2286e8bbe) |
+| 3 | `smart_contract_call` | Khushi Singh | `GD65DOOOH4MRNNJUJSP364RSVFX7Q2NSYN3AU6IO7K44HIR4AZUOIWXS` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/417818629b2638ea1b630795b921970b977bcc526c47320a2f53e30b6e7162c0) |
+| 4 | `smart_contract_call` | Arti Desai | `GCRLGZXFIRYUZZPON232TWQBD2HG6RFLTSEAZ6ESM7IBIKNH7T7FOE3P` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/b7ca0a4c3fad0f830ecbfbe50c22c05bb7bcd917664d954ff49ff9006477b6f4) |
+| 5 | `smart_contract_call` | Rekha Nair | `GCETQ36PPT3B6CFQ7XROLPIJA3LBUJOLDD33P4SO7UIMFQQQDPHGGMLO` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4e5e308ad750d0b987a968223bf9e8270ae1fae4a31257b751e1ac9b707d72d4) |
+| 6 | `smart_contract_call` | Rahul Kumar | `GD27HB53D4X6M5F2R3LT6BL34LOTBC5FKFTN3MY2J4SEDFYQW2F2FAL5` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/876b58c7e8f73edd1fe492a81757c50e211e618def4b0d95619e8c01376013ef) |
+| 7 | `smart_contract_call` | Prakash | `GDAQ5C64WEMPZKPZUVCA5572DABDZZGI5KFTBBHQQ65JJE2PCIYOGCBU` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/a1c189bc595c903e520bd544a99987d1a78ea9357df379a0616014079b7c1c5f) |
+| 8 | `smart_contract_call` | Sandeep Bhat | `GA6LWVBYQV5RJU5PRRBNB3W4UTUHUVMWH2QDN2A6UQL2H4EFYRO3PTBE` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/2881fc54eca8dbf7105d8cd7022e5d1e87c3a9c6773cb8ceaf1e128bd9ab682e) |
+| 9 | `smart_contract_call` | Sunil Ghosh | `GBCTYEQWNX7XZQWOISZ5PUIXNB4WSZVUTYEQKDFRFXZDE6Y4P22WYNQD` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/df3e931f4dc75438b6596f2ec62414e2091f9b34f646799efd12428228d92133) |
+| 10 | `smart_contract_call` | AKSHARA KAPOOR | `GBYWKSNHUVNP4AZK45LOFHNHH66FFIRR7RQN73AXBGEQORTHTQAJLZNV` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/815a6b4da5f91f47507bc7774c256954be778b83b5060e57e494d18548ad6d33) |
+| 11 | `smart_contract_call` | Ashok tiwari | `GALWDLYQJMGGAT7Q3TXVF6QGYZ2RIGZM2WFA2D2WXCRZ47YN5FHOD6YP` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/92219cae205b623761dc9722509c726726bdbd4cd01b374bb4d7c59973455f73) |
+| 12 | `smart_contract_call` | Geeta Bhat | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4293192f26a732276eec3425cfaca26d36c9ebf29259a918f9c4baa255450f0d) |
+| 13 | `smart_contract_call` | Vijay Pillai | `GDFHTP2Q2E5B52QEE6NIFXFYTAYJIF2NKKW3WJZYNY6UKFIV6C6A34F5` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1f52d0a0d0a514d0f5c1d63673f47e335293d0c242c75a5e3f1604a11f9746fb) |
 
 ### 3. Feedback Implementation Log
 
-| User ID | Feedback Summary | Improvement Made | Git Commit ID |
-|---------|------------------|------------------|---------------|
-| U001 | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
-| U003 | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
-| U004 | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| U005 | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| U006 | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
+| User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
+|---------|------|------------------|------------------|---------------|
+| U001 | Suresh Patel | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
+| U003 | Khushi Singh | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
+| U004 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U005 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U006 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
 
 ---
 
