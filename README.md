@@ -103,13 +103,13 @@ We successfully onboarded **real users** with Stellar Testnet wallets and verifi
 
 ### 3. Feedback Implementation Log
 
-| # | Name | Feedback Summary | Improvement Made | Git Commit ID |
-|---|------|------------------|------------------|---------------|
-| 1 | Suresh Patel | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
-| 2 | Khushi Singh | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
-| 3 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| 4 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| 5 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
+| User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
+|---------|------|------------------|------------------|---------------|
+| U001 | Suresh Patel | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
+| U003 | Khushi Singh | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
+| U004 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U005 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U006 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
 
 ---
 
