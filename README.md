@@ -29,22 +29,19 @@ AgroPay is a decentralized, transparent, and low-cost agricultural marketplace a
 
 ---
 
-## ✅ Level 4 - Green Belt Submission Checklist
+## ✅ Level 5 - Blue Belt Submission Checklist
 
-This project successfully fulfills all the requirements for the Level 4 Green Belt submission:
+This project successfully fulfills all the requirements for the Level 5 Blue Belt submission:
 
 - [x] **Public GitHub repository:** Yes, this repository is public.
-- [x] **README with complete documentation:** You're reading it! (Includes architecture, setup, and features).
-- [x] **Minimum 15+ meaningful commits:** Yes, spanning smart contracts and frontend development.
-- [x] **Live demo link:** [https://agro-pay-farmer-marketplace-with-se.vercel.app/](https://agro-pay-farmer-marketplace-with-se.vercel.app/)
-- [x] **Contract deployment address:** `CDLMALEHLMMQRYDDS6T32SR7HCV6DGEU3NNO34TYUIXNHHSCGRFKGRGF`
-- [x] **Screenshots showing:**
-  - Product UI (See below)
-  - Mobile responsive design (See below)
-  - Analytics or monitoring setup (See below)
+- [x] **Minimum 20+ meaningful commits:** Yes, spanning smart contracts and frontend development.
+- [x] **Live deployed application:** [https://agro-pay-farmer-marketplace-with-se.vercel.app/](https://agro-pay-farmer-marketplace-with-se.vercel.app/)
+- [x] **PPT/Pitch deck link:** [View Pitch Deck](https://docs.google.com/presentation/d/10QthcQJb-7c1jWfEHlGbpcit3Qk2sR6s/edit?usp=sharing&ouid=114494973489055894068&rtpof=true&sd=true)
 - [x] **Demo video link:** [Watch Demo on Google Drive](https://drive.google.com/file/d/1aREaFwTW5Ps6pNCTVH7lQUxe02Xg-BBM/view?usp=sharing)
-- [x] **Proof of 10+ user wallet interactions:** Documented with tx hashes in the [User Onboarding](#user-onboarding) section.
-- [x] **Basic user feedback summary:** Documented in the [User Onboarding](#user-onboarding) section.
+- [x] **Proof of 50+ users:** Verified 60 real users actively using the application (see User Onboarding section).
+- [x] **Screenshots of analytics or transaction activity:** Added to the photo gallery.
+- [x] **Updated README and documentation:** You're reading it!
+- [x] **User feedback iteration summary:** Detailed below, mapping collected feedback to shipped improvements.
 
 ---
 
@@ -62,11 +59,14 @@ Here is a visual walkthrough of the AgroPay interface and capabilities, covering
 | <img src="./images/analytics.png" width="400" alt="Analytics"> | <img src="./images/on_chain_analytics.png" width="400" alt="On Chain Analytics"> |
 | **On-chain derived metrics and real-time event monitoring** | **Detailed on-chain analytics and descriptions of network activity** |
 
-## 👥 User Onboarding
+## 👥 User Onboarding (50+ Verified Users)
 
-We successfully onboarded **real users** with Stellar Testnet wallets and verified on-chain transactions to distribute payments seamlessly. 
+We successfully onboarded over 50 **real users** (60 total) with Stellar Testnet wallets and verified on-chain transactions to distribute payments seamlessly. 
 
-### 1. Users Onboarded (Recent Cohort)
+- **Google Form for Onboarding & Feedback:** [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSeU73ZNg2dy6NKFk1Z2MkdKEsgcBDeM-LbIVmSp8SzrJhcoHQ/viewform?usp=dialog)
+- **Exported Excel/CSV Data (Feedback & Wallets):** [View Google Sheet (60 Users)](https://docs.google.com/spreadsheets/d/1ljqWRN9TZjoO7IjrwrdnMXl0mkIrPOyfexRHsPiBMlE/edit?usp=sharing)
+
+### 1. Highlighted Users Onboarded (Recent Cohort)
 | User ID | Name | Email | Role | Wallet Address | Feedback Summary |
 |---|---|---|---|---|---|
 | U001 | Suresh Patel | sureshpatel993@gmail.com | Farmer | `GCFST2ZOAQ3JAYT2HODBWCW3GVX67VRGYHBXPSCLU3ZQXL2IBMYGSZXR` | "...adding a notification system for when funds are released would be very helpful" |
@@ -110,6 +110,18 @@ We successfully onboarded **real users** with Stellar Testnet wallets and verifi
 | U004 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
 | U005 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
 | U006 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
+| U011 | Ashok tiwari | "Add Quintals and Tonnes to units" | Added Quintals and Tonnes to the Listing Unit Selector | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
+| U014 | Vandana kapoor | "wish I could hide my listing temporarily without deleting it." | Added visibility toggle on Farmer Dashboard | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
+
+### 4. Future Evolution & Improvements Plan
+
+Based on the 60+ user feedbacks collected, here is how we plan to evolve AgroPay in the next phase:
+
+1. **Hardware Wallet Support (Ledger)**: Mentioned by multiple buyers, we will integrate `stellar-ledger` support.
+2. **Partial Escrow Release**: Allow milestone-based partial payouts for larger shipments (Smart Contract V2).
+3. **Buyer Verification Badges**: Introduce a trust scoring system based on successful past orders.
+4. **Offline Caching (PWA)**: Implement service workers so farmers can draft listings without stable internet.
+5. **Mainnet USDC Integration**: Transition from Testnet XLM to Mainnet USDC as the primary settlement layer.
 
 ---
 
