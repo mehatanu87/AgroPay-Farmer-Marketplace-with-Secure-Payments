@@ -26,7 +26,7 @@ jobs:
             contracts/target
           key: cargo-${{ hashFiles('contracts/**/Cargo.toml') }}
       - name: Cargo update
-        working-directory: contracts/agropay_escrow
+        working-directory: contracts
         run: cargo update
       - name: Cargo fmt
         working-directory: contracts/agropay_escrow
