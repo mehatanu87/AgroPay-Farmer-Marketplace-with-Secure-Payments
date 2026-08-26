@@ -83,7 +83,23 @@ We successfully onboarded over 50 **real users** (60 total) with Stellar Testnet
 | U012 | Geeta Bhat | geetabhat770@gmail.com | Buyer | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | "...suggest adding a feature to partially release funds for milestone deliveries" |
 | U013 | Vijay Pillai | vijaypillai77@gmail.com | Buyer | `GDFHTP2Q2E5B52QEE6NIFXFYTAYJIF2NKKW3WJZYNY6UKFIV6C6A34F5` | "...it would be great to see hardware wallet support added in the future" |
 
-### 2. Stellar Ledger Transaction Proofs (Verified interactions)
+For a full analysis of all 60 user responses and our complete product iteration roadmap, please see the [User Feedback Summary](./USER_FEEDBACK_SUMMARY.md).
+
+### 2. Feedback Implementation Log
+
+| User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
+|---------|------|------------------|------------------|---------------|
+| U001 | Suresh Patel | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
+| U003 | Khushi Singh | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
+| U004 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U005 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
+| U006 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
+| U011 | Ashok tiwari | "Add Quintals and Tonnes to units" | Added Quintals and Tonnes to the Listing Unit Selector | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
+| U014 | Vandana kapoor | "wish I could hide my listing temporarily without deleting it." | Added visibility toggle on Farmer Dashboard | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
+
+### 3. Stellar Ledger Transaction Proofs (Verified interactions)
+
+We successfully recorded over 50 on-chain transactions verifying the authenticity of our user base.
 
 | # | Action / Method | Participants | Wallet Address | Transaction Hash (StellarExpert Ledger Link) |
 |---|---|---|---|---|
@@ -100,20 +116,44 @@ We successfully onboarded over 50 **real users** (60 total) with Stellar Testnet
 | 11 | `smart_contract_call` | Ashok tiwari | `GALWDLYQJMGGAT7Q3TXVF6QGYZ2RIGZM2WFA2D2WXCRZ47YN5FHOD6YP` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/92219cae205b623761dc9722509c726726bdbd4cd01b374bb4d7c59973455f73) |
 | 12 | `smart_contract_call` | Geeta Bhat | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/4293192f26a732276eec3425cfaca26d36c9ebf29259a918f9c4baa255450f0d) |
 | 13 | `smart_contract_call` | Vijay Pillai | `GDFHTP2Q2E5B52QEE6NIFXFYTAYJIF2NKKW3WJZYNY6UKFIV6C6A34F5` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1f52d0a0d0a514d0f5c1d63673f47e335293d0c242c75a5e3f1604a11f9746fb) |
-
-For a full analysis of all 60 user responses and our complete product iteration roadmap, please see the [User Feedback Summary](./USER_FEEDBACK_SUMMARY.md).
-
-### 3. Feedback Implementation Log
-
-| User ID | Name | Feedback Summary | Improvement Made | Git Commit ID |
-|---------|------|------------------|------------------|---------------|
-| U001 | Suresh Patel | "adding a notification system for when funds are released" | Added Notification bell UI for fund releases | [`2b1e8db`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/2b1e8db) |
-| U003 | Khushi Singh | "allow farmers to upload multiple images of their produce" | Allowed multiple file uploads on Create Listing | [`d98f42a`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/d98f42a) |
-| U004 | Arti Desai | "clear tutorial on how to bridge to mainnet USDC" | Added external bridging tutorial link in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| U005 | Rekha Nair | "Adding multi-language support (like Hindi and Marathi)" | Added language dropdown selector in Navbar | [`bd90369`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/bd90369) |
-| U006 | Rahul Kumar | "Clearer status indicators would improve the experience" | Added distinct colored status badges and Cancel button | [`a2fe524`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/a2fe524) |
-| U011 | Ashok tiwari | "Add Quintals and Tonnes to units" | Added Quintals and Tonnes to the Listing Unit Selector | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
-| U014 | Vandana kapoor | "wish I could hide my listing temporarily without deleting it." | Added visibility toggle on Farmer Dashboard | [`ba458d2`](https://github.com/mehatanu87/AgroPay-Farmer-Marketplace-with-Secure-Payments/commit/ba458d2) |
+| 14 | `smart_contract_call` | Anu Mehta | `GDRXIWLE6QQXKSXTJK4FA2L3HXUUEHYXZMJVND7F4AZV7MCBLLWHBVFT` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/34041e08a30a4ff35b183912bd05644f9932c1f9e1ef9e1bad54e2166880b684) |
+| 15 | `smart_contract_call` | Smriti kumari | `GCEWT3ZSFYVXFEDQJWHZ7M54Z7XKGUL2WQIKJQ6SUY6O3DBNGHQ4WJEB` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/d4c04b2f3c11e16d68e399a71a26b2c221ce52832aef5c66c975e30ecda1f2a0) |
+| 16 | `smart_contract_call` | Sara Anaya | `GDTM44B5LZIE4QTDWJSEHCL3AC35LJMZXWYKDJGHMCXUG6TU74EGDPQ2` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/116484bd4a5073bcdfd4e0a3b21b7d4366d42a8a5fb977fa22288bcd3faca127) |
+| 17 | `smart_contract_call` | Himanshu Jha | `GBOINQ6G7S2C35RWWFNUBJFJEBWMUMGKGY2SFRL4ARUJ5HDDM6D2ZZAU` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/6a648e7576974f47904a4b3d370420f7302c0c19a7aa3ef560a4ded98fb9b054) |
+| 18 | `smart_contract_call` | Ranjana Mehta | `GCEJHPCBGCYLXVJI5WL4G7ULX35LROPCZNEQAQTXLGTYRF33QE6W7VOL` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/65642c138bda17bbca60cde6c0da5fe87a21a6a21cd4457c873126f5dee74eab) |
+| 19 | `smart_contract_call` | Akash Mondal | `GC2OU7U2FV4V4QKYNJZEUKWBVYAWGZ4LVLSOPL5A3KDSBXBW2WFGZOYE` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/3803eb7bbd710581024e5b7b42dd277c85392380093403a0f5fa3484ff246567) |
+| 20 | `smart_contract_call` | Anil Kumar | `GDDXWUPMPM5UYITYUDVXDQF6PA6PVXUD72TA72BNQG3FGK7HQO7VTVMY` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/9407604a83bf3ceee20c2b44b5bc2d6121262d07d0737475bc78b1326cb12e57) |
+| 21 | `smart_contract_call` | Sunita Gupta | `GA6Q3DXIH4JZHS2LJOQZHNLPPQRUSBD7NZY3RAETXDMZL2MWDWZOO47W` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1649c76e2148fc7392f9b3f0e401bdc85c7b110d80af74d6026db162b2a60b50) |
+| 22 | `smart_contract_call` | rakesh Sharma | `GCPYEDMGPFSTJKGSPUSEQBWKOERBK744FTDXYBZZLIMA4UZJMKBH35ID` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1d88661a753e3745811e40b1ddee45ca2aea83f5b6fdea57f8cec1643f94db73) |
+| 23 | `smart_contract_call` | Subheksh koma | `GA6553X5MAQ25TMTUOHLNAGG5Y3VY5UFLXT6XYWICTPDVK6ZQH3JLPBE` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/c2b9cbaea65de62fdb2194adc5ab4ba84c379abdb8f75f769b1db58374092004) |
+| 24 | `smart_contract_call` | Kavita Singh | `GDKQODQOOJARQUVVICX63YU6KF6OSV6FOE4DCC74JDK2VEXFW2QGJJCP` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/624e6c2f2abd4a02c96a24aa4b133190a3f55bf4532b3a84944bdd4fc7baa52c) |
+| 25 | `smart_contract_call` | Deepak | `GBAGUMNAHGTP4EFUPGA7JYCRJ7IT4S5RSHH3TKIAE7FZBOO6J5HV36S6` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/08e83db7ec4b500226513b8f36d54c8ea29c625bc638cffc9db5fb137abfa2de) |
+| 26 | `smart_contract_call` | Shan Arav | `GBX6EUQED3KZXPDAEVRW63E2BHOESOJEYI5OXYINJBV3T64ATTSR6AJY` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/aa8e225c102b54900d584d9eb8d93cb4a85420ecd014f69b31d53e5996993c85) |
+| 27 | `smart_contract_call` | Eshan Mehra | `GCBTFUHSA5BOHXK2P5X2FOMZ3CXOE34PLIMEA4FQ76SWU6DGDXN3H6DX` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/afee0e7aeda967bd2b80bf6e5824eb681ece1ba32699b89c346c42949bf4f0fa) |
+| 28 | `smart_contract_call` | Simmi Tiwari | `GA5K7LJ4T6OBHGXSM5ULVOLWLTPJZ3RGNXA3CH25AMZFMPWQFMMU53FS` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/5cc49e999412f35c6d68b2a8c71cfb47cedb620063e8c3610e6c269de61f978a) |
+| 29 | `smart_contract_call` | Sohbham Patil | `GCYDFY6V6YJ2ESEXF37CKM2AGATFXG5U4RPRSXKIM2TDZY35I3QDCEWW` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/19fc9cb17a047c682a953d4275287c5f376f46f584f07c8594723c48e296525d) |
+| 30 | `smart_contract_call` | Jayant Vaibhav | `GBUJIBAYCZR6LBOIQ6JRMT2PPGQXTNYMSIC6EGJVYU42DMW6T7D74Y3G` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/2564561cbd87bacb0a3d8cb47b3a458bcc1fcffba77ea57e60e69acf2f781a7c) |
+| 31 | `smart_contract_call` | Pooja Chauhan | `GC2RHEDMYX6UFGWRM7FUGLMMYEJFFRWFMLTLMLTFPRUMCR2LYCPFFIXC` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/88743d76e75144783006e521cac11ade578234437ddef6b772d861d43d79e9a8) |
+| 32 | `smart_contract_call` | Sanjay rao | `GATHOE3SYNMPIR72H6JKMI4S5NVM5ICKOAYFVUQB2GXTKWOXUKKZS63U` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/1acb696e91b62ef020f57af47a900b972c9897dec935a6d42b4ea3305557fa72) |
+| 33 | `smart_contract_call` | Anjali Sharma | `GBSGJZYHXSPQPWYW6WSLFNKMXGQYAQJVZTQ4HFMGGFF3WMM4UVGW6L6R` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/f699472dbdcde83d23de15d85353ac0169d7f5fa6bb75549f558ae8580186e34) |
+| 34 | `smart_contract_call` | Preeti k Pillai | `GBIAVM5HXQSVZFIGRY3GEFBLTGTGGAYJWBQHTBSYQOBQTNLU2KWXGNHR` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/c683712e2e4d6968bf3ed3f50bee20f05b748199e0627861982b943dfdf6dd32) |
+| 35 | `smart_contract_call` | Rohan Tiwari | `GDN2FPYUAG7HUBAX7BAGCOEM6DQDIIZ5K4I7TJSKPLNKRPX3ODO44FB4` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/706196729d4e6b1c8720d65443090e128a9e62205d8f4f4afb3cf9887b0d507e) |
+| 36 | `smart_contract_call` | Kiran Malhotra | `GCNUEOIJ2EB67WJFTRK2OMMRAPSVXLXGIFGIUAB5GPD36X2CQHST757N` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/90779369dfb2bad8ba6b4dc229666c917b50da3c9483a96a1d9e9ecc15d6041e) |
+| 37 | `smart_contract_call` | Rajesh Sen | `GBDN6KDZFO5BETK2Z6M36HNJVVQVNVUZVJXKLIAHEUBDF5TBSMOCS5UG` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/755b71e146cae32dad4aedf4aeba1bdf0d9d7f09487369183a731b2e151388e2) |
+| 38 | `smart_contract_call` | Nisha chawala | `GBSY64XGHYXBXFEECM3X44C3NJR7FJK74SSAU3XODGMMS4ZVXVHHD56V` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/f0ccd2043006404191312ebcd04aa9d598183dc5c77239525155b4164d715cfe) |
+| 39 | `smart_contract_call` | Manoj | `GAAWS2U6ECHN2SB3ITTHI2EP75JGZ2NEZDL2XY2O2FO4KAYTYAVTF33C` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/b9674169701156e72a1de9d4c50dff425afa817126073c748974f2565962474d) |
+| 40 | `smart_contract_call` | divya kumari | `GAZMM7LZLLQSVQ4LMUDOVMXOIVCK54QIIDMRDNRXMSN6VI3YJ6XQTZJP` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/7bfb76644d15c7734920b6e86d8350a38bfd747d2ae25dd90772551225f01f12) |
+| 41 | `smart_contract_call` | Amit Jain | `GBZPCRTLAKNCKYP64NMDHOGUVLCZPFDNRAOS7YWNYH7LJ3BFRDXKIWWL` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/a88d92fbb7d9ca2b4e0fca650fe17b9bf3496ec3ba9c02f4733822efb8dbfca9) |
+| 42 | `smart_contract_call` | Seema Shah | `GC6F5MVRRKLNRG57I6SVXXJITJAXOYETCAHWK25PLHP67YTGA6XMMMKY` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/57dabc157ec06a843f36bba8805d606e7192ba61b6dc2e935984090c7d37f956) |
+| 43 | `smart_contract_call` | Ravi Banerjee | `GDRJ3XQMAZJ2373F4SBOYPITRF4XXVSC4PT3KXT35I6PSXYYD24MDBPV` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/d410d47055e7a5ff72b577ae71204e5d2fbd5161cd50d6220775905afa5d0c69) |
+| 44 | `smart_contract_call` | Neha Mishra | `GDMCL2H342SPD75JGARB7HAUK3B57O6VYJ32YJ34PER5B2X5KZQXO5ZT` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/8aae8bba8f53e6868f50a01f9578bc0a2e6f3906a7da6e83d7a25939994459ea) |
+| 45 | `smart_contract_call` | Ajay Thakur | `GBKVIG6HF6O7Y576AS7DZH4QPMM2EBZ5GWWQTWIFHM6XVO34YRR7532G` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/7837694dd9397ef2a9b9e2b6d60ec4afcddca39dcd18d7b93f3fbfc8cb155668) |
+| 46 | `smart_contract_call` | Ritu Prasad | `GC6GFW5C7KVPGV3ILEDVTPEIRQ5NDXL3WZ35XK2ELPTMWUEXVEJ7MN7I` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/0051aa92b4e9f5aaa5396b4779d3d535877dd0e0eb9a58a4713f8b2f37754f60) |
+| 47 | `smart_contract_call` | Vandana kapoor | `GBLQKNTVB5DMGL7CUXIATRIQLMV6GCLJ34G7ERWTVE3ZF2GA4OHEJMJC` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/7d31f3e8ac5854c61e34e2e131b7e6b6488a98cf607887f424dea61c91f72988) |
+| 48 | `smart_contract_call` | Jyoti Gupta | `GAJP22YW2OM5JZYKCMRX6VOWE77Z35UKSEWBOCOMOSSJCNMTPL3MV7O3` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/d0b699e54273e5b28081d35d7d6c8b0638c8c1e82dce0559e98a0ede1ba8ad53) |
+| 49 | `smart_contract_call` | Naveen Pathak | `GBC4PMDZDOQ2RA42SY6GT5G5VQRXYPQRGKSMLTFHJHQD6XFITTSK6D54` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/9fbe369b5b0995fbb78f197cfc0a30c141c6f07e67bcdd32d65150334c8992e7) |
+| 50 | `smart_contract_call` | Swati Gupta | `GDDHXHWZFNZQBHZYVXZAXJR2IQR3KPYKKAPHKQ2BT2RGSJVFE6G4TN2L` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/575aa49f6cf53009f84033b7da7023f3be2da384d0e19d518441439053132a3b) |
+| 51 | `smart_contract_call` | Preeti Kumari | `GCPANXK3EWGTPMVMTAACATCWE3BMZRBAXE4RXTSBNLBGYCC7IVYHSJEW` | [View Tx Link](https://stellar.expert/explorer/testnet/tx/52e957214d4a7f65875bcfde115bccab1dbdb591f47082015671e27075c43100) |
 
 ### 4. Future Evolution & Improvements Plan
 
